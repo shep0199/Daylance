@@ -86,9 +86,7 @@ img {
     border-color: #3d5af1;
 }
 
-/* Responsive layout observation: At approximately 235px, the navigation becomes cramped
-   and the cards are very narrow. The cards still wrap into a single column as intended. */
-
+/* Responsive layout observation: At approximately 528px, the navigation becomes cramped as the site name and links sit too close together. The cards wrap into a single column as intended. */
 
 /* Recent messages */
 
