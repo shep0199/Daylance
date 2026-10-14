@@ -1,0 +1,46 @@
+/* Base */
+
+/* Padding and border sit inside an element's width */
+* {
+    box-sizing: border-box;
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*  Wrapper */
+
+/* Wrapper element for page content */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+/* Navigation bar */
+
+/* Flexbox use 1: name pinned left, links pinned right, vertically centred */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Flexbox use 2: the nav links are their own flex container with a gap */
+.nav-list {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+/* Hover and focus states on every nav link */
+.nav-list a:hover,
+.nav-list a:focus {
+    background-color: #e6f0ff;
+    outline: 2px solid #3d5af1;
+}

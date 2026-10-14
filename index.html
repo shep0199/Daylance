@@ -9,9 +9,14 @@
 </head>
 
 <body>
+    <!-- Wrapper: holds all page content -->
+     <div class="wrapper">
+
     <!-- Header: Daylance branding and website navigation -->
-     <header>
-    <h1>Daylance</h1>
+    
+        <header class="site-header">
+            <h1>Daylance</h1>
+    
     <!-- Main navigation: one link for each page in the site map -->
      <nav aria-label="Main">
         <ul>
@@ -28,44 +33,59 @@
 <!-- Main: Homepage dashboard content -->
  <main>
  <!-- Welcome heading -->
-        <section>
+  <section id="welcome">
             <h2>Welcome back!</h2>
             <p>Here's what's happening this week.</p>
         </section>
         
-<!-- Mini calendar -->
-        <section>
+<!-- Card row: dashboard cards -->
+ <div class="cards">
+
+ <!-- Mini calendar -->
+        <section class="card">
             <h3>October 2026</h3>
         </section>
 
 <!-- Upcoming tasks -->
-        <section>
+         <section class="card">
             <h3>Upcoming Tasks</h3>
         </section>
 
 <!-- To-do list -->
-        <section>
+         <section class="card">
             <h3>To Do List</h3>
         </section>
 
 <!-- Quick actions -->
-        <section>
+        <section class="card">
             <h3>Quick Actions</h3>
         </section>
 
 <!-- Recent messages: each message is its own article -->
-        <section>
+        <section class="card" id="messages">
             <h3>Recent Messages</h3>
-            <article><h4>Email</h4></article>
-            <article><h4>Messanger</h4></article>
-            <article><h4>Teams</h4></article>
-            <article><h4>Instagram</h4></article>
+            <article>
+                <h4>Email</h4>
+            </article>
+            <article>
+                <h4>Messenger</h4>
+            </article>
+            <article>
+                <h4>Teams</h4>
+            </article>
+            <article>
+                <h4>Instagram</h4>
+            </article>
         </section>
+
+        </div> <!-- Closes Dashboard cards container -->
+
 </main>
 
 <!-- Footer: Website information -->
  <footer>
     <p>&copy; 2026 Daylance. All rights reserved.</p>
 </footer>
+     </div> <!-- Closes Wrapper -->
 </body>
 </html>
