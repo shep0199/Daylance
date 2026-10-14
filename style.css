@@ -44,3 +44,50 @@ img {
     background-color: #e6f0ff;
     outline: 2px solid #3d5af1;
 }
+
+/* Centring exercise */
+
+/* Fixed-height container with its content centred both ways */
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+/* Prediction: with flex-direction: column, the heading and the paragraph
+   will stack on top of each other instead of sitting side by side, and
+   they will still be centred. */
+
+
+/* Card row */
+
+/* Flexbox use 3: cards sit side by side and wrap onto new lines */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* Each card grows to fill the row, starting from 250px wide */
+.card {
+    flex: 1 1 250px;
+    padding: 1rem;
+    border: 1px solid #cccccc;
+}
+
+/* Hover and focus states on the cards */
+.card:hover,
+.card:focus-within {
+    border-color: #3d5af1;
+}
+
+/* Breakpoint: the layout stops looking right at about ___px because ___ */
+
+
+/* Recent messages */
+
+/* Space between each message in the Recent Messages card */
+#messages article {
+    margin-bottom: 0.5rem;
+}
