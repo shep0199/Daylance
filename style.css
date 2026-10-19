@@ -94,3 +94,18 @@ img {
 #messages article {
     margin-bottom: 0.5rem;
 }
+
+/* Accessibility: Make skip link visible on keyboard focus */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: white;
+  color: black;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 0;
+}
