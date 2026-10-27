@@ -1,166 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daylance | Calendar</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Accessibility: Skip navigation to main content -->
-<a href="#main-content" class="skip-link">
-  Skip to main content
-</a>
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
 
- <!-- Wrapper: holds all page content -->
-     <div class="wrapper">
+    <!-- Wrapper: holds all page content -->
+    <div class="wrapper">
 
- <!-- Header: Daylance branding and website navigation -->
-    
+        <!-- Header: Daylance branding and website navigation -->
+
         <header class="site-header">
             <h1>Daylance</h1>
-    
-<!-- Main navigation: one link for each page in the site map -->
-     <nav aria-label="Main">
-        <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="calendar.html" aria-current="page">Calendar</a></li>
-                <li><a href="messages.html">Messages</a></li>
-                <li><a href="income.html">Income</a></li>
-                <li><a href="content.html">Content</a></li>
-            </ul>
-        </nav>
-    </header>
 
-<!-- Main: Calendar page content -->
- <main id="main-content" tabindex="-1">
+            <!-- Main navigation: one link for each page in the site map -->
+            <nav aria-label="Main">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="calendar.html" aria-current="page">Calendar</a></li>
+                    <li><a href="messages.html">Messages</a></li>
+                    <li><a href="income.html">Income</a></li>
+                    <li><a href="content.html">Content</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <!-- Intro -->
-    <section id="calendar-intro">
-        <h2>Calendar</h2>
-        <p>Add your shoots, edits, meetings, and deadlines so your whole week is in one place.</p>
-    </section>
+        <!-- Main: Calendar page content -->
+        <main id="main-content" tabindex="-1">
 
-<!-- Form: freelancer adds an event to their calendar -->
-<section id="add-event">
-    <h2>Add an Event</h2>
+            <!-- Intro -->
+            <section id="calendar-intro">
+                <h2>Calendar</h2>
+                <p>Add your shoots, edits, meetings, and deadlines so your whole week is in one place.</p>
+            </section>
 
-<!--I used post because the form creates new data (a calendar event) and includes private details like client names and notes. get would put all of that in the URL, where it’s visible, saved in history, and could be resubmitted by accident. get is only for forms that retrieve data, like search-->
+            <!-- Form: freelancer adds an event to their calendar -->
+            <section id="add-event">
+                <h2>Add an Event</h2>
 
-    <form action="result.html" method="post">
-         <div>
-             <label for="event-name">Event Name</label>
-             <input type="text" id="event-name" name="eventname" placeholder="Event Name" required>
-         </div>
+                <!--I used post because the form creates new data (a calendar event) and includes private details like client names and notes. get would put all of that in the URL, where it’s visible, saved in history, and could be resubmitted by accident. get is only for forms that retrieve data, like search-->
 
-         <div>
-             <label for="event-date">Date</label>
-             <input type="date" id="event-date" name="eventdate" required>
-        </div>
-        
-        <div>
-            <label for="event-time">Time</label>
-            <input type="time" id="event-time" name="eventtime">
-        </div>
+                <form action="result.html" method="post">
+                    <div>
+                        <label for="event-name">Event Name</label>
+                        <input type="text" id="event-name" name="eventname" placeholder="Event Name" required>
+                    </div>
 
-        <div>
-            <label for="name">Client Name</label>
-            <input type="text" id="name" name="name" placeholder="Client Name" required>
-        </div>
+                    <div>
+                        <label for="event-date">Date</label>
+                        <input type="date" id="event-date" name="eventdate" required>
+                    </div>
 
-        <div>
-            <label for="email">Client Email</label>
-            <input type="email" id="email" name="email" placeholder="client@example.com" required>
-        </div>
-        
-        <div>
-            <label for="subject">Subject</label>
-            <select name="subject" id="subject">
-                 <option value="shoot">Shoot</option>
-                 <option value="edit">Editing</option>
-                 <option value="meeting">Meeting or Call</option>
-                 <option value="deadline">Deadline</option>
-                 <option value="admin">Admin</option>
-            </select>
-        </div>
+                    <div>
+                        <label for="event-time">Time</label>
+                        <input type="time" id="event-time" name="eventtime">
+                    </div>
 
-<div>
-    <fieldset>
-        <legend>How should your client get their reminder?</legend>
+                    <div>
+                        <label for="name">Client Name</label>
+                        <input type="text" id="name" name="name" placeholder="Client Name" required>
+                    </div>
 
-        <input type="radio" id="contact-email" name="contactmethod" value="email" checked>
-         <label for="contact-email">Email</label>
-         
-         <input type="radio" id="contact-phone" name="contactmethod" value="phone">
-         <label for="contact-phone">Phone call</label>
-         
-         <input type="radio" id="contact-text" name="contactmethod" value="text">
-         <label for="contact-text">Text message</label>
-    </fieldset>
-</div>
+                    <div>
+                        <label for="email">Client Email</label>
+                        <input type="email" id="email" name="email" placeholder="client@example.com" required>
+                    </div>
 
-<div>
-    <label for="notes">Notes</label>
-    <textarea name="notes" id="notes" placeholder="Enter any notes here..."></textarea>
-</div>
-<div>
-    <button type="submit">Add to Calendar</button>
-</div>
+                    <div>
+                        <label for="subject">Subject</label>
+                        <select name="subject" id="subject">
+                            <option value="shoot">Shoot</option>
+                            <option value="edit">Editing</option>
+                            <option value="meeting">Meeting or Call</option>
+                            <option value="deadline">Deadline</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
 
-    </form>
-</section>
+                    <div>
+                        <fieldset>
+                            <legend>How should your client get their reminder?</legend>
 
-<!-- Table: the freelancer's upcoming events -->
-<!-- Sample entries: shows what saved events will look like. Real saving needs JavaScript, added later. -->
-<section id="upcoming-events">
-    <h2>Your Week</h2>
+                            <input type="radio" id="contact-email" name="contactmethod" value="email" checked>
+                            <label for="contact-email">Email</label>
 
-    <table>
-        <caption>Upcoming Events</caption>
-        <thead>
-            <tr>
-                <th scope="col">Event</th>
-                <th scope="col">Date</th>
-                <th scope="col">Time</th>
-                <th scope="col">Type</th>
-            </tr>
-        </thead>
-    <tbody>
-        <tr>
-            <th scope="row">Bakery reel shoot</th>
-            <td>Oct 28</td>
-            <td>10:00 a.m.</td>
-            <td>Shoot</td>
-        </tr>
-        <tr>
-            <th scope="row">Yoga promo edit</th>
-            <td>Oct 29</td>
-            <td>1:00 p.m.</td>
-            <td>Editing</td>
-        </tr>
-        <tr>
-            <th scope="row">Farm photo gallery</th>
-            <td>Oct 30</td>
-            <!-- colspan: "All-day deadline" covers both the Time and Type columns -->
-            <td colspan="2">All-day deadline</td>
-        </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-        <th scope="row">Total this week</th>
-        <!-- colspan: one total covers the Date, Time, and Type columns -->
-        <td colspan="3">3 events</td>
-    </tr>
-</tfoot>
+                            <input type="radio" id="contact-phone" name="contactmethod" value="phone">
+                            <label for="contact-phone">Phone call</label>
 
-    </table>
-</section>
+                            <input type="radio" id="contact-text" name="contactmethod" value="text">
+                            <label for="contact-text">Text message</label>
+                        </fieldset>
+                    </div>
 
+                    <div>
+                        <label for="notes">Notes</label>
+                        <textarea name="notes" id="notes" placeholder="Enter any notes here..."></textarea>
+                    </div>
+                    <div>
+                        <button type="submit">Add to Calendar</button>
+                    </div>
 
-</main>
+                </form>
+            </section>
+
+            <!-- Table: the freelancer's upcoming events -->
+            <!-- Sample entries: shows what saved events will look like. Real saving needs JavaScript, added later. -->
+            <section id="upcoming-events">
+                <h2>Your Week</h2>
+
+                <table>
+                    <caption>Upcoming Events</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Event</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Bakery reel shoot</th>
+                            <td>Oct 28</td>
+                            <td>10:00 a.m.</td>
+                            <td>Shoot</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Yoga promo edit</th>
+                            <td>Oct 29</td>
+                            <td>1:00 p.m.</td>
+                            <td>Editing</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Farm photo gallery</th>
+                            <td>Oct 30</td>
+                            <!-- colspan: "All-day deadline" covers both the Time and Type columns -->
+                            <td colspan="2">All-day deadline</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Total this week</th>
+                            <!-- colspan: one total covers the Date, Time, and Type columns -->
+                            <td colspan="3">3 events</td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </section>
 
 
-</div>
+        </main>
+
+
+    </div>
 
 </body>
+
 </html>
