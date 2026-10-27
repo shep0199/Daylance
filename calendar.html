@@ -46,6 +46,7 @@
     <h2>Add an Event</h2>
 
 <!--I used post because the form creates new data (a calendar event) and includes private details like client names and notes. get would put all of that in the URL, where it’s visible, saved in history, and could be resubmitted by accident. get is only for forms that retrieve data, like search-->
+
     <form action="result.html" method="post">
          <div>
              <label for="event-name">Event Name</label>
@@ -60,6 +61,11 @@
         <div>
             <label for="event-time">Time</label>
             <input type="time" id="event-time" name="eventtime">
+        </div>
+
+        <div>
+             <label for="client">Client</label>
+             <input type="text" id="client" name="client" placeholder="Client Name">
         </div>
 
 
