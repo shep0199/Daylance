@@ -62,7 +62,6 @@ img {
    Result: the heading and paragraph stacked on top of each other and
    stayed centred, so my prediction was right. */
 
-
    /* Card row */
 
 /* Grid use 1, mobile base: cards in a single column */
@@ -107,4 +106,22 @@ img {
 
 .skip-link:focus {
   top: 0;
+}
+
+/* Grid use 2: form fields stacked with even spacing */
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+form > div > label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* Text fields fill the screen width on phones */
+form input:not([type="radio"]),
+form select,
+form textarea {
+    width: 100%;
 }
