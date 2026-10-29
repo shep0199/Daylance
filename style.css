@@ -164,6 +164,7 @@ form textarea {
     .cards {
         grid-template-columns: repeat(3, 1fr);
     }
+}
 
 /* Container query: once a card is 500px+ wide, its items sit side by side */
 @container card (min-width: 500px) {
