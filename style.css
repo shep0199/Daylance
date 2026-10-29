@@ -76,6 +76,7 @@ img {
     padding: 1rem;
     border: 1px solid #cccccc;
     container-type: inline-size;
+    container-name: card;
 }
 
 /* Hover and focus states on the cards */
@@ -162,5 +163,16 @@ form textarea {
 @media (min-width: 880px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+/* Container query: once a card is 500px+ wide, its items sit side by side */
+@container card (min-width: 500px) {
+    .card-inner {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+    }
+    .card-inner h3 {
+        grid-column: 1 / -1;
     }
 }
