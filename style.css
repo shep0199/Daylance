@@ -125,3 +125,14 @@ form select,
 form textarea {
     width: 100%;
 }
+
+/* Fluid font size: grows with the screen, never smaller than 1.75rem or bigger than 2.75rem */
+.site-header h1 {
+    font-size: clamp(1.75rem, 1rem + 3vw, 2.75rem);
+}
+
+/* Keep lines of text readable on wide screens */
+#calendar-intro,
+#add-event {
+    max-width: 65ch;
+}
