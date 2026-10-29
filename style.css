@@ -20,7 +20,6 @@ img {
     padding: 0 1rem;
 }
 
-
 /* Navigation bar */
 
 /* Flexbox use 1, mobile base: site name stacked above the links */
@@ -45,6 +44,16 @@ img {
     background-color: #e6f0ff;
     outline: 2px solid #3d5af1;
 }
+/* Centring exercise */
+
+/* Fixed-height container with its content centred both ways */
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+}
 
 /* Prediction: with flex-direction: column, the heading and the paragraph
    will stack on top of each other instead of sitting side by side, and
@@ -56,18 +65,18 @@ img {
 
    /* Card row */
 
-/* Flexbox use 3: cards sit side by side and wrap onto new lines */
+/* Grid use 1, mobile base: cards in a single column */
 .cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
-/* Each card grows to fill the row, starting from 250px wide */
+/* Each card is a container, so its layout can react to its own width */
 .card {
-    flex: 1 1 250px;
     padding: 1rem;
     border: 1px solid #cccccc;
+    container-type: inline-size;
 }
 
 /* Hover and focus states on the cards */
