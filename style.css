@@ -136,3 +136,31 @@ form textarea {
 #add-event {
     max-width: 65ch;
 }
+
+/* ===== Breakpoints (mobile-first) ===== */
+
+/* 600px: header goes side by side */
+@media (min-width: 600px) {
+    .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* 600px: 2 card columns */
+@media (min-width: 600px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #messages {
+        grid-column: span 2;
+    }
+}
+
+/* 880px: 3 card columns */
+@media (min-width: 880px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
