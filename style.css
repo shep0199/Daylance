@@ -23,17 +23,18 @@ img {
 
 /* Navigation bar */
 
-/* Flexbox use 1: name pinned left, links pinned right, vertically centred */
+/* Flexbox use 1, mobile base: site name stacked above the links */
 .site-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-/* Flexbox use 2: the nav links are their own flex container with a gap */
+/* Flexbox use 2: links wrap to a new line instead of squishing */
 .nav-list {
     display: flex;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
     list-style: none;
     padding: 0;
 }
@@ -43,17 +44,6 @@ img {
 .nav-list a:focus {
     background-color: #e6f0ff;
     outline: 2px solid #3d5af1;
-}
-
-/* Centring exercise */
-
-/* Fixed-height container with its content centred both ways */
-#welcome {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 200px;
 }
 
 /* Prediction: with flex-direction: column, the heading and the paragraph
