@@ -138,6 +138,19 @@ form textarea {
     max-width: 65ch;
 }
 
+/* Table: left-align text so it lines up with the rest of the page */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption,
+th,
+td {
+    text-align: left;
+    padding: 0.25rem 0.5rem 0.25rem 0;
+}
+
 /* ===== Breakpoints (mobile-first) ===== */
 
 /* 600px: header goes side by side */
