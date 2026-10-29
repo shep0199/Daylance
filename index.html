@@ -10,98 +10,109 @@
 
 <body>
 
-<!-- Accessibility: Skip navigation to main content -->
-<a href="#main-content" class="skip-link">
-  Skip to main content
-</a>
+    <!-- Accessibility: Skip navigation to main content -->
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
 
- <!-- Wrapper: holds all page content -->
-     <div class="wrapper">
+    <!-- Wrapper: holds all page content -->
+    <div class="wrapper">
 
- <!-- Header: Daylance branding and website navigation -->
-    
+        <!-- Header: Daylance branding and website navigation -->
+
         <header class="site-header">
             <h1>Daylance</h1>
-    
-<!-- Main navigation: one link for each page in the site map -->
-     <nav aria-label="Main">
-        <ul class="nav-list">
-                <li><a href="index.html" aria-current="page">Home</a></li>
-                <li><a href="calendar.html">Calendar</a></li>
-                <li><a href="messages.html">Messages</a></li>
-                <li><a href="income.html">Income</a></li>
-                <li><a href="content.html">Content</a></li>
-            </ul>
-        </nav>
-    </header>
+
+            <!-- Main navigation: one link for each page in the site map -->
+            <nav aria-label="Main">
+                <ul class="nav-list">
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="messages.html">Messages</a></li>
+                    <li><a href="income.html">Income</a></li>
+                    <li><a href="content.html">Content</a></li>
+                </ul>
+            </nav>
+        </header>
 
 
-<!-- Main: Homepage dashboard content -->
-    <main id="main-content" tabindex="-1">
- <!-- Welcome heading -->
-  <section id="welcome">
-            <h2>Welcome back!</h2>
-            <p>Here's what's happening this week.</p>
-        </section>
-        
-<!-- Card row: dashboard cards -->
- <div class="cards">
+        <!-- Main: Homepage dashboard content -->
+        <main id="main-content" tabindex="-1">
+            <!-- Welcome heading -->
+            <section id="welcome">
+                <h2>Welcome back!</h2>
+                <p>Here's what's happening this week.</p>
+            </section>
 
- <!-- Mini calendar -->
-        <section class="card">
-            <h3>October 2026</h3>
-        </section>
+            <!-- Card row: dashboard cards -->
+            <div class="cards">
 
-<!-- Upcoming tasks -->
-         <section class="card">
-            <h3>Upcoming Tasks</h3>
-             <a href="calendar.html">View Calendar</a>
-        </section>
+                <!-- Mini calendar -->
+                <section class="card">
+                    <div class="card-inner">
+                        <h3>October 2026</h3>
+                    </div>
+                </section>
 
-<!-- To-do list -->
-         <section class="card">
-            <h3>To Do List</h3>
-        </section>
+                <!-- Upcoming tasks -->
+                <section class="card">
+                    <div class="card-inner">
+                        <h3>Upcoming Tasks</h3>
+                        <a href="calendar.html">View Calendar</a>
+                    </div>
+                </section>
 
-<!-- Quick actions -->
-        <section class="card">
-            <h3>Quick Actions</h3>
-        </section>
+                <!-- To-do list -->
+                <section class="card">
+                    <div class="card-inner">
+                        <h3>To Do List</h3>
+                    </div>
+                </section>
 
-<!-- Recent messages: each message is its own article -->
-        <section class="card" id="messages">
-            <h3>Recent Messages</h3>
-            <article>
-                <h4>Email</h4>
-            </article>
-            <article>
-                <h4>Messenger</h4>
-            </article>
-            <article>
-                <h4>Teams</h4>
-            </article>
-            <article>
-                <h4>Instagram</h4>
-            </article>
-        </section>
+                <!-- Quick actions -->
+                <section class="card">
+                    <div class="card-inner">
+                        <h3>Quick Actions</h3>
+                    </div>
+                </section>
 
-        </div> <!-- Closes Dashboard cards container -->
+                <!-- Recent messages: each message is its own article -->
+                <section class="card" id="messages">
+                    <div class="card-inner"></div>
+                    <h3>Recent Messages</h3>
+                    <article>
+                        <h4>Email</h4>
+                    </article>
+                    <article>
+                        <h4>Messenger</h4>
+                    </article>
+                    <article>
+                        <h4>Teams</h4>
+                    </article>
+                    <article>
+                        <h4>Instagram</h4>
+                    </article>
+            </div>
+            </section>
 
-</main>
+    </div> <!-- Closes Dashboard cards container -->
 
-<!-- Footer: Website information -->
- <footer>
-    <p>&copy; 2026 Daylance. All rights reserved.</p>
-</footer>
-     </div> <!-- Closes Wrapper -->
+    </main>
+
+    <!-- Footer: Website information -->
+    <footer>
+        <p>&copy; 2026 Daylance. All rights reserved.</p>
+    </footer>
+    </div> <!-- Closes Wrapper -->
 </body>
+
 </html>
 
 <!-- Accessibility: Keyboard navigation tested successfully.
      All links have visible focus indicators.
      Tab and Shift+Tab navigation passed.
 -->
-     
+
 <!-- Accessibility audit:
      Tested using Chrome Lighthouse.
      Accessibility score: 100%.
