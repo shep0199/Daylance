@@ -34,58 +34,42 @@
             </nav>
         </header>
 
-        <!-- Main: Income page content -->
+        <!-- Main: Content page content -->
         <main id="main-content" tabindex="-1">
 
             <!-- Intro -->
-            <section id="income-intro">
-                <h2>Income</h2>
-                <p>Track what each client owes you and what has already been paid.</p>
+            <section id="content-intro">
+                <h2>Content</h2>
+                <p>Plan the posts and videos you're creating for clients, and see what's due next.</p>
             </section>
 
-            <!-- Table: payments this month -->
-            <section id="payments">
-                <h2>November Payments</h2>
+            <!-- Upcoming content: each post is its own article -->
+            <section id="upcoming-content">
+                <h2>Upcoming Posts</h2>
 
-                <table>
-                    <caption>Client payments for November 2026</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Client</th>
-                            <th scope="col">Project</th>
-                            <th scope="col">Amount</th>
-                            <th scope="col">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Sweet Crumb Bakery</th>
-                            <td>Holiday reel</td>
-                            <td>$350</td>
-                            <td>Paid</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Flow Yoga Studio</th>
-                            <td>Promo video edit</td>
-                            <td>$275</td>
-                            <td>Unpaid</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Green Acres Farm</th>
-                            <td>Photo gallery</td>
-                            <td>$400</td>
-                            <td>Invoice sent</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th scope="row">Total</th>
-                            <!-- colspan: the total covers the Project and Amount columns -->
-                            <td colspan="2">$1,025</td>
-                            <td>1 of 3 paid</td>
-                        </tr>
-                    </tfoot>
-                </table>
+                <article>
+                    <h3>Holiday Cookie Reel</h3>
+                    <p>Client: Sweet Crumb Bakery</p>
+                    <p>Platform: Instagram Reels</p>
+                    <p>Posting <time datetime="2026-11-20">Nov 20</time></p>
+                </article>
+
+                <article>
+                    <h3>Morning Flow Promo</h3>
+                    <p>Client: Flow Yoga Studio</p>
+                    <p>Platform: TikTok</p>
+                    <p>Posting <time datetime="2026-11-24">Nov 24</time></p>
+                </article>
+            </section>
+
+            <!-- Ideas: a simple list, not articles, because ideas don't stand on their own -->
+            <section id="content-ideas">
+                <h2>Content Ideas</h2>
+                <ul>
+                    <li>Behind-the-scenes of a bakery shoot</li>
+                    <li>Before-and-after edit comparison</li>
+                    <li>Client testimonial carousel</li>
+                </ul>
             </section>
 
         </main>
