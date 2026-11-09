@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daylance | Content</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Accessibility: Skip navigation to main content -->
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
+
+    <!-- Wrapper: holds all page content -->
+    <div class="wrapper">
+
+        <!-- Header: Daylance branding and website navigation -->
+
+        <header class="site-header">
+            <h1>Daylance</h1>
+
+            <!-- Main navigation: one link for each page in the site map -->
+            <nav aria-label="Main">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="messages.html">Messages</a></li>
+                    <li><a href="income.html">Income</a></li>
+                    <li><a href="content.html" aria-current="page">Content</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main: Income page content -->
+        <main id="main-content" tabindex="-1">
+
+            <!-- Intro -->
+            <section id="income-intro">
+                <h2>Income</h2>
+                <p>Track what each client owes you and what has already been paid.</p>
+            </section>
+
+            <!-- Table: payments this month -->
+            <section id="payments">
+                <h2>November Payments</h2>
+
+                <table>
+                    <caption>Client payments for November 2026</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Client</th>
+                            <th scope="col">Project</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Sweet Crumb Bakery</th>
+                            <td>Holiday reel</td>
+                            <td>$350</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Flow Yoga Studio</th>
+                            <td>Promo video edit</td>
+                            <td>$275</td>
+                            <td>Unpaid</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Green Acres Farm</th>
+                            <td>Photo gallery</td>
+                            <td>$400</td>
+                            <td>Invoice sent</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Total</th>
+                            <!-- colspan: the total covers the Project and Amount columns -->
+                            <td colspan="2">$1,025</td>
+                            <td>1 of 3 paid</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+        </main>
+
+        <!-- Footer: Website information -->
+        <footer>
+            <p>&copy; 2026 Daylance. All rights reserved.</p>
+        </footer>
+        <!-- Closes Wrapper -->
+
+    </div>
+
+</body>
+
+</html>
