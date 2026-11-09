@@ -26,153 +26,102 @@
             <nav aria-label="Main">
                 <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="calendar.html" 
-                    <li><a href="messages.html" aria-current="page">Messages</a></li>
+                    <li><a href="calendar.html" <li><a href="messages.html" aria-current="page">Messages</a></li>
                     <li><a href="income.html">Income</a></li>
                     <li><a href="content.html">Content</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- Main: Calendar page content -->
+        <!-- Main: Messages page content -->
         <main id="main-content" tabindex="-1">
-
             <!-- Intro -->
-            <section id="calendar-intro">
-                <h2>Calendar</h2>
-                <p>Add your shoots, edits, meetings, and deadlines so your whole week is in one place.</p>
+            <section id="messages-intro">
+                <h2>Messages</h2>
+                <p>See your latest client messages from every platform in one place.</p>
             </section>
 
-            <!-- Form: freelancer adds an event to their calendar -->
-            <section id="add-event">
-                <h2>Add an Event</h2>
+            <!-- Inbox: each message is its own article because it makes sense on its own -->
+            <section id="inbox">
+                <h2>Recent Messages</h2>
 
-                <!--I used post because the form creates new data (a calendar event) and includes private details like client names and notes. get would put all of that in the URL, where it’s visible, saved in history, and could be resubmitted by accident. get is only for forms that retrieve data, like search-->
+                <article>
+                    <h3>Email: Sweet Crumb Bakery</h3>
+                    <p>Can we move Tuesday's reel shoot to 11 a.m.?</p>
+                    <p>Received <time datetime="2026-11-06">Nov 6</time></p>
+                </article>
 
+                <article>
+                    <h3>Instagram: Flow Yoga Studio</h3>
+                    <p>Loved the first cut of the promo! Two small changes coming by email.</p>
+                    <p>Received <time datetime="2026-11-05">Nov 5</time></p>
+                </article>
+
+                <article>
+                    <h3>Teams: Green Acres Farm</h3>
+                    <p>Gallery link received, thank you. Invoice can go out this week.</p>
+                    <p>Received <time datetime="2026-11-04">Nov 4</time></p>
+                </article>
+            </section>
+
+            <!-- Contact form: freelancer sends a message to a client -->
+            <section id="send-message">
+                <h2>Send a Message</h2>
+
+                <!-- post: this form sends new data (a message) with a client's email, so it should not appear in the URL -->
                 <form action="result.html" method="post">
                     <div>
-                        <label for="event-name">Event Name</label>
-                        <input type="text" id="event-name" name="eventname" placeholder="Event Name" required>
+                        <label for="msg-client-name">Client Name</label>
+                        <input type="text" id="msg-client-name" name="clientname" required>
                     </div>
 
                     <div>
-                        <label for="event-date">Date</label>
-                        <input type="date" id="event-date" name="eventdate" required>
+                        <label for="msg-client-email">Client Email</label>
+                        <input type="email" id="msg-client-email" name="clientemail" placeholder="client@example.com"
+                            required>
                     </div>
 
                     <div>
-                        <label for="event-time">Time</label>
-                        <input type="time" id="event-time" name="eventtime">
+                        <label for="msg-subject">Subject</label>
+                        <input type="text" id="msg-subject" name="subject" required>
+                    </div>
+
+                    <fieldset>
+                        <legend>Send this message by</legend>
+
+                        <input type="radio" id="send-email" name="platform" value="email" checked>
+                        <label for="send-email">Email</label>
+
+                        <input type="radio" id="send-instagram" name="platform" value="instagram">
+                        <label for="send-instagram">Instagram</label>
+
+                        <input type="radio" id="send-teams" name="platform" value="teams">
+                        <label for="send-teams">Teams</label>
+                    </fieldset>
+
+                    <div>
+                        <label for="msg-body">Message</label>
+                        <textarea id="msg-body" name="message" rows="6" required></textarea>
                     </div>
 
                     <div>
-                        <label for="client-name">Client Name</label>
-                        <input type="text" id="client-name" name="clientname" placeholder="Client Name" required>
+                        <button type="submit">Send Message</button>
                     </div>
-
-                    <div>
-                        <label for="client-email">Client Email</label>
-                        <input type="email" id="client-email" name="clientemail" placeholder="client@example.com" required>
-                    </div>
-
-                    <div>
-                        <label for="client-phone">Client Phone</label>
-                        <input type="tel" id="client-phone" name="clientphone" placeholder="613-555-0123">
-                    </div>
-
-                    <div>
-                        <label for="event-type">Event Type</label>
-                        <select name="eventtype" id="event-type">
-                            <option value="shoot">Shoot</option>
-                            <option value="edit">Editing</option>
-                            <option value="meeting">Meeting or Call</option>
-                            <option value="deadline">Deadline</option>
-                            <option value="admin">Admin</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <fieldset>
-                            <legend>How should your client get their reminder?</legend>
-
-                            <input type="radio" id="contact-email" name="contactmethod" value="email" checked>
-                            <label for="contact-email">Email</label>
-
-                            <input type="radio" id="contact-phone" name="contactmethod" value="phone">
-                            <label for="contact-phone">Phone call</label>
-
-                            <input type="radio" id="contact-text" name="contactmethod" value="text">
-                            <label for="contact-text">Text message</label>
-                        </fieldset>
-                    </div>
-
-                    <div>
-                        <label for="notes">Notes</label>
-                        <textarea name="notes" id="notes" placeholder="Enter any notes here..."></textarea>
-                    </div>
-                    <div>
-                        <button type="submit">Add to Calendar</button>
-                    </div>
-
                 </form>
             </section>
 
-            <!-- Table: the freelancer's upcoming events -->
-            <!-- Sample entries: shows what saved events will look like. Real saving needs JavaScript, added later. -->
-            <section id="upcoming-events">
-                <h2>Your Week</h2>
-
-                <table>
-                    <caption>Upcoming Events</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Event</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Time</th>
-                            <th scope="col">Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Bakery reel shoot</th>
-                            <td>Oct 28</td>
-                            <td>10:00 a.m.</td>
-                            <td>Shoot</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Yoga promo edit</th>
-                            <td>Oct 29</td>
-                            <td>1:00 p.m.</td>
-                            <td>Editing</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Farm photo gallery</th>
-                            <td>Oct 30</td>
-                            <!-- colspan: "All-day deadline" covers both the Time and Type columns -->
-                            <td colspan="2">All-day deadline</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th scope="row">Total this week</th>
-                            <!-- colspan: one total covers the Date, Time, and Type columns -->
-                            <td colspan="3">3 events</td>
-                        </tr>
-                    </tfoot>
-
-                </table>
-            </section>
 
 
         </main>
-  
-     <!-- Footer: Website information -->
+
+        <!-- Footer: Website information -->
         <footer>
             <p>&copy; 2026 Daylance. All rights reserved.</p>
         </footer>
-    <!-- Closes Wrapper -->
+        <!-- Closes Wrapper -->
 
     </div>
 
 </body>
+
 </html>
