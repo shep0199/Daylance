@@ -44,6 +44,7 @@ img {
     background-color: #e6f0ff;
     outline: 2px solid #3d5af1;
 }
+
 /* Centring exercise */
 
 /* Fixed-height container with its content centred both ways */
@@ -62,7 +63,7 @@ img {
    Result: the heading and paragraph stacked on top of each other and
    stayed centred, so my prediction was right. */
 
-   /* Card row */
+/* Card row */
 
 /* Grid use 1, mobile base: cards in a single column */
 .cards {
@@ -96,17 +97,17 @@ img {
 
 /* Accessibility: Make skip link visible on keyboard focus */
 .skip-link {
-  position: absolute;
-  top: -50px;
-  left: 0;
-  background: white;
-  color: black;
-  padding: 10px;
-  z-index: 1000;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background: white;
+    color: black;
+    padding: 10px;
+    z-index: 1000;
 }
 
 .skip-link:focus {
-  top: 0;
+    top: 0;
 }
 
 /* Grid use 2: form fields stacked with even spacing */
@@ -115,7 +116,7 @@ form {
     gap: 1rem;
 }
 
-form > div > label {
+form>div>label {
     display: block;
     margin-bottom: 0.25rem;
 }
@@ -167,6 +168,7 @@ td {
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
+
     #messages {
         grid-column: span 2;
     }
@@ -186,7 +188,39 @@ td {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
         gap: 1rem;
     }
+
     .card-inner h3 {
         grid-column: 1 / -1;
     }
+}
+
+/* Skip link: hidden above the page until a keyboard user tabs to it */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    z-index: 100;
+    background: #ffffff;
+    color: #000000;
+    padding: 8px 16px;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus: a clear outline on everything a keyboard user can reach */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
+/* Images: never wider than their container */
+img {
+    max-width: 100%;
+    height: auto;
 }
