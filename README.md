@@ -31,3 +31,37 @@ I started at 320px and widened the browser slowly, noting where the layout stopp
 - **Real phone:** iPhone 13, Safari. Homepage and calendar page checked. Found that iOS Safari shows date/time inputs wider than other fields, so I added a fix.
 - **Second browser:** Safari on Mac (I normally use Chrome).
 - **Chrome DevTools:** checked every width from 320px to 1200px with no horizontal scroll.
+
+A freelancer organizer that keeps schedules, clients, income, content and messages in one place, because a freelancer's work is usually scattered across many apps.
+
+## MTM1511 Midterm: Multi-Page Site
+
+### Pages
+- index.html: Home dashboard (profile avatar, welcome, mini calendar, tasks, recent messages)
+- calendar.html: Add an Event form and a table of upcoming events
+- messages.html: Recent client messages and a Send a Message form (the site's contact form)
+- income.html: Table of client payments with a total
+- content.html: Empty uploads state, upcoming posts, and content ideas
+- result.html: Confirmation page that both forms submit to. It isn't in the nav because it's only reached by submitting a form.
+
+### Departures from the plan
+- The brief suggests Home, About, Projects/Work and Contact pages. Daylance follows my Week 5 site map instead, using app-style pages (Calendar, Messages, Income, Content) that suit a freelancer tool.
+- The contact form lives on the Messages page ("Send a Message"), since that's where a freelancer contacts clients.
+- The Content page shows an empty-state section ("No content uploaded yet") with a folder icon. In a finished version, this would only appear when a user has no uploads.
+- The Home page shows a default profile avatar that users would later replace with their own photo.
+
+### Folders and files
+- images/: profile-avatar.jpeg and folder-icon.png, both credited in the footer of the page that uses them
+- style.css: all styles for the site
+
+### Image credits
+- Profile avatar by WandererCreative from Pixabay: https://pixabay.com/vectors/blank-profile-picture-mystery-man-973460/
+- Folder icon by janjf93 from Pixabay: https://pixabay.com/vectors/folder-flat-design-icon-symbol-2103508/
+
+### Accessibility and validation testing (Nov 8, 2026)
+- Keyboard test: PASSED on all 6 pages. Skip link appears on the first Tab, focus is visible on every link and form control, and both forms submit using only the keyboard.
+- Lighthouse Accessibility: PASSED with 100% on all 6 pages.
+- W3C Markup Validator: PASSED with zero errors on all 6 pages.
+
+### Note on forms
+Both forms use method="post" because they send new data that includes client details, which shouldn't appear in the URL. On GitHub Pages, submitting a form shows a "405 Not Allowed" error because static hosting can't receive POST data. The forms are built correctly and would work on a real server.
