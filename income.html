@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daylance | Income</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Accessibility: Skip navigation to main content -->
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
+
+    <!-- Wrapper: holds all page content -->
+    <div class="wrapper">
+
+        <!-- Header: Daylance branding and website navigation -->
+
+        <header class="site-header">
+            <h1>Daylance</h1>
+
+            <!-- Main navigation: one link for each page in the site map -->
+            <nav aria-label="Main">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="income.html" aria-current="page">Income</a></li>
+                    <li><a href="content.html">Content</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main: Messages page content -->
+        <main id="main-content" tabindex="-1">
+            <!-- Intro -->
+            <section id="messages-intro">
+                <h2>Messages</h2>
+                <p>See your latest client messages from every platform in one place.</p>
+            </section>
+
+            <!-- Inbox: each message is its own article because it makes sense on its own -->
+            <section id="inbox">
+                <h2>Recent Messages</h2>
+
+                <article>
+                    <h3>Email: Sweet Crumb Bakery</h3>
+                    <p>Can we move Tuesday's reel shoot to 11 a.m.?</p>
+                    <p>Received <time datetime="2026-11-06">Nov 6</time></p>
+                </article>
+
+                <article>
+                    <h3>Instagram: Flow Yoga Studio</h3>
+                    <p>Loved the first cut of the promo! Two small changes coming by email.</p>
+                    <p>Received <time datetime="2026-11-05">Nov 5</time></p>
+                </article>
+
+                <article>
+                    <h3>Teams: Green Acres Farm</h3>
+                    <p>Gallery link received, thank you. Invoice can go out this week.</p>
+                    <p>Received <time datetime="2026-11-04">Nov 4</time></p>
+                </article>
+            </section>
+
+            <!-- Contact form: freelancer sends a message to a client -->
+            <section id="send-message">
+                <h2>Send a Message</h2>
+
+                <!-- post: this form sends new data (a message) with a client's email, so it should not appear in the URL -->
+                <form action="result.html" method="post">
+                    <div>
+                        <label for="msg-client-name">Client Name</label>
+                        <input type="text" id="msg-client-name" name="clientname" required>
+                    </div>
+
+                    <div>
+                        <label for="msg-client-email">Client Email</label>
+                        <input type="email" id="msg-client-email" name="clientemail" placeholder="client@example.com"
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="msg-subject">Subject</label>
+                        <input type="text" id="msg-subject" name="subject" required>
+                    </div>
+
+                    <fieldset>
+                        <legend>Send this message by</legend>
+
+                        <input type="radio" id="send-email" name="platform" value="email" checked>
+                        <label for="send-email">Email</label>
+
+                        <input type="radio" id="send-instagram" name="platform" value="instagram">
+                        <label for="send-instagram">Instagram</label>
+
+                        <input type="radio" id="send-teams" name="platform" value="teams">
+                        <label for="send-teams">Teams</label>
+                    </fieldset>
+
+                    <div>
+                        <label for="msg-body">Message</label>
+                        <textarea id="msg-body" name="message" rows="6" required></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit">Send Message</button>
+                    </div>
+                </form>
+            </section>
+
+
+
+        </main>
+
+        <!-- Footer: Website information -->
+        <footer>
+            <p>&copy; 2026 Daylance. All rights reserved.</p>
+        </footer>
+        <!-- Closes Wrapper -->
+
+    </div>
+
+</body>
+
+</html>
