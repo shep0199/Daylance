@@ -96,11 +96,24 @@ img {
 
 /*  Wrapper */
 
-/* Wrapper element for page content */
+/* Grid page layout: header, main and footer stacked in 3 rows. main gets 1fr so the footer stays at the bottom on short pages. */
 .wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+}
+
+main {
+    padding: 1.5rem 0 2.5rem;
+}
+
+/* Space between sections on every page */
+main > section + section,
+main > section + .cards {
+    margin-top: 2.5rem;
 }
 
 /* Navigation bar */
