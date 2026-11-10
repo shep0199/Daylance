@@ -383,6 +383,14 @@ textarea {
     min-height: 8rem;
 }
 
+/* iOS Safari fix: date and time fields ignore width: 100% until Safari's built-in styling is turned off. min-height keeps them the same height as the other fields when empty. */
+input[type="date"],
+input[type="time"] {
+    -webkit-appearance: none;
+    display: block;
+    min-height: 3rem;
+}
+
 /* Grid use 4: radio buttons and labels */
 fieldset {
     display: grid;
