@@ -5,32 +5,32 @@ MTM1544 Week 7:
 I started at 320px and widened the browser slowly, noting where the layout stopped looking right.
 
 - **~401px:** below this, the 5 nav links wrap onto two lines. No media query needed, `flex-wrap: wrap` handles it.
-- **600px (header):** below this, "Daylance" and the nav links are too crowded to sit side by side, so the header stays stacked. At 600px they fit in one row with space between.
 - **600px (2 columns):** at 599px one card was over 550px wide with lots of empty space. At 600px two cards fit (~260px each) without "Upcoming Tasks" wrapping onto two lines.
-- **880px (3 columns):** from 880px, three cards fit side by side without looking cramped. Recent Messages spans 2 columns so the grid has no empty gap.
+- **720px (header):** below this, "Daylance" and the nav links are too crowded to sit side by side, so the header stays stacked. This was 600px before styling, but once the nav links got padding they wrapped onto 2 rows next to the name from 600-699px. At 720px they fit on one row.
+- **880px (3 columns):** from 880px, three cards fit side by side without looking cramped. Recent Messages becomes a tall column on the right, like my desktop mockup.
 
 ## Container query
 - `.card` is a container (`container-type: inline-size`, `container-name: card`).
-- At 400px+ card width, the card's items sit side by side using Grid.
-- Tested in two spots: Recent Messages spans 2 columns (wide spot), so its 4 messages sit in a row, while the other cards (narrow spots) stay stacked at the same screen width.
+- At 500px+ card width, the card's items sit side by side using Grid.
+- Tested in two spots: from 600-879px, Recent Messages spans 2 columns (wide spot), so its 4 messages sit in a row, while the other cards (narrow spots) stay stacked at the same screen width.
 
 ## Small-screen decisions (not shown in the mockup)
 - **Header:** the name stacks above the nav on phones, and links wrap instead of shrinking, so all 5 pages stay easy to tap.
-- **Cards:** 1 column on phones instead of a sideways scroll, keeping the same order as desktop.
-- **Recent Messages:** spans 2 columns on wider screens so the grid has no empty gap.
-- **Form:** fields are full width so they're easy to tap.
-- **Table:** stays a table on phones. At 321px all 4 columns still fit, so no horizontal scroll was needed. Text is left-aligned to match the page.
-- **100dvh:** not used, since the site has no full-screen section.
+- **Cards:** 1 column on phones instead of a sideways scroll, keeping the same order as desktop. Phone cards are white with a thin border, like my phone mockup.
+- **Recent Messages:** spans 2 columns from 600px so the grid has no empty gap, then becomes a tall right-hand column from 880px.
+- **Form:** fields are full width so they're easy to tap. Radio options stack one per row so a label never gets split from its button.
+- **Table:** stays a table on phones. At 320px all 4 columns still fit, so no horizontal scroll was needed. Text is left-aligned to match the page.
+- **100dvh:** used `min-height: 100dvh` on the wrapper so the footer stays at the bottom of short pages.
 
 ## Fluid sizing
 - Site heading uses `clamp(1.75rem, 1rem + 3vw, 2.75rem)`.
-- Calendar intro and form are capped at `max-width: 65ch`.
+- Intro text and forms are capped at `max-width: 65ch`.
 - `img { max-width: 100%; height: auto; }` applied site-wide.
 
 ## Testing
-- **Real phone:** iPhone 13, Safari. Homepage and calendar page checked. Found that iOS Safari shows date/time inputs wider than other fields, so I added a fix.
+- **Real phone:** iPhone 13, Safari. Homepage and calendar page checked. Found that iOS Safari shows date/time inputs wider than other fields. The full fix was added in Week 8 (see Week 8 testing).
 - **Second browser:** Safari on Mac (I normally use Chrome).
-- **Chrome DevTools:** checked every width from 320px to 1200px with no horizontal scroll.
+- **Chrome DevTools:** checked every width from 320px to 1440px with no horizontal scroll.
 
 A freelancer organizer that keeps schedules, clients, income, content and messages in one place, because a freelancer's work is usually scattered across many apps.
 
@@ -65,3 +65,24 @@ A freelancer organizer that keeps schedules, clients, income, content and messag
 
 ### Note on forms
 Both forms use method="post" because they send new data that includes client details, which shouldn't appear in the URL. On GitHub Pages, submitting a form shows a "405 Not Allowed" error because static hosting can't receive POST data. The forms are built correctly and would work on a real server.
+
+## MTM1511 Week 8: Styling
+
+- One external stylesheet (style.css) linked from all 6 pages, with `box-sizing: border-box` set globally.
+- Typography: system font stack ending in `sans-serif`, all font sizes in `rem`, `line-height` 1.6 for body text and 1.2 for headings.
+- Colour palette: warm whites with navy text, documented at the top of style.css with names by job (Ink, Muted, Page, Surface, Card, Brand...). Every text/background pair, plus hover and focus states, was checked with the WebAIM contrast checker and passes AA. I changed the focus outline from #f59e0b to #b45309, because the lighter amber was only about 2:1 on white and focus outlines need 3:1.
+- Grid: page layout on `.wrapper` (header / main / footer), dashboard cards, upcoming posts, and forms.
+- Flexbox: header, nav links, welcome section, Recent Messages rows, empty uploads box.
+- Mobile-first: `min-width` queries only, at 600, 720 and 880px, each chosen from where the content broke (see Breakpoints above).
+
+### Why Grid and Flexbox where I used them
+- **Grid for the page and the dashboard:** both are two-dimensional. The wrapper needs rows that size differently (`auto 1fr auto`) so the footer stays at the bottom. The dashboard needs rows and columns at the same time, because Recent Messages spans 2 rows on the right like my mockup. Flexbox only lays things out in one direction, so it can't do that.
+- **Flexbox for the nav bar:** the links are one row of items with different widths that just need to sit side by side and wrap on small screens. That's a one-dimensional problem, so Flexbox with `flex-wrap` and `gap` fits, and there are no columns to line up.
+
+### How the palette works on a new page
+The colours are named by job, so a page I haven't built (for example, a Settings or Invoice page) would use them the same way: Page for the background, Surface for panels and inputs, Card for grouped content, Ink for headings and text, Muted for helper text, Brand for the main button, and Brand tint for the selected item. No new colours would be needed, and every pair is already checked.
+
+### Week 8 testing
+- Chrome DevTools: all 6 pages checked from 320px to 1440px, no horizontal scroll.
+- Real phone (iPhone 13, Safari): found the date and time fields running off the right edge of the Calendar page, because Safari's built-in date styling ignores `width: 100%`. Fixed with `appearance: none` (and `-webkit-appearance: none` for Safari) on those two fields. Re-tested: all pages fit with no layout breaks.
+- W3C CSS Validator: 0 syntax errors in my own code. It flags 3 lines (`container-type`, `container-name`, `@container`) because the validator doesn't support container queries yet. They're standard CSS (Week 7: Container Queries) and work in every current browser, including Safari on my iPhone.
