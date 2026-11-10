@@ -434,17 +434,42 @@ button:focus {
     background-color: #2c44c9;
 }
 
+/* Tables */
+
 /* Table: left-align text so it lines up with the rest of the page */
 table {
     width: 100%;
     border-collapse: collapse;
+    background-color: #fffdf9;
+    font-size: 0.875rem;
 }
 
 caption,
 th,
 td {
     text-align: left;
-    padding: 0.25rem 0.5rem 0.25rem 0;
+    padding: 0.625rem 0.5rem;
+}
+
+caption {
+    padding-left: 0;
+    color: #5e5850;
+    font-weight: 600;
+}
+
+thead th {
+    background-color: #ece7df;
+    border-bottom: 2px solid #1b1f3b;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f6f2eb;
+}
+
+tfoot th,
+tfoot td {
+    font-weight: 700;
+    border-top: 2px solid #1b1f3b;
 }
 
 /* ===== Breakpoints (mobile-first) ===== */
