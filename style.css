@@ -208,10 +208,12 @@ main > section + .cards {
     gap: 1.5rem;
 }
 
-/* Each card is a container, so its layout can react to its own width */
+/* Each card is a container, so its layout can react to its own width. Phone cards are white with a thin border, like my phone mockup. */
 .card {
-    padding: 1rem;
-    border: 1px solid #cccccc;
+    padding: 1.5rem;
+    background-color: #fffdf9;
+    border: 2px solid #ded8ce;
+    border-radius: 20px;
     container-type: inline-size;
     container-name: card;
 }
@@ -222,13 +224,48 @@ main > section + .cards {
     border-color: #3d5af1;
 }
 
+/* Card heading on the left, link (like "View all") on the right */
+.card-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.card-inner h3 {
+    margin: 0;
+}
+
+.card-inner > a {
+    color: #5e5850;
+    font-size: 0.875rem;
+}
+
 /* Responsive layout observation: At approximately 528px, the navigation becomes cramped as the site name and links sit too close together. The cards wrap into a single column as intended. */
 
 /* Recent messages */
 
-/* Space between each message in the Recent Messages card */
+/* Flexbox use 3: each message spans the card, with the icon square and message name in a row */
 #messages article {
-    margin-bottom: 0.5rem;
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* The white square from my mockup, drawn with a pseudo-element */
+#messages article::before {
+    content: "";
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    background-color: #fbf8f3;
+    border: 1px solid #ded8ce;
+    border-radius: 8px;
+}
+
+#messages h4 {
+    margin: 0;
 }
 
 /* Grid use 2: form fields stacked with even spacing */
