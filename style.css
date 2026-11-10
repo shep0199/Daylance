@@ -371,6 +371,22 @@ button {
     color: inherit;
 }
 
+/* Responsive form fields */
+form input:not([type="radio"]),
+form select,
+form textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 0.625rem 0.75rem;
+    background-color: #fffdf9;
+    border: 1px solid #7c756b;
+    border-radius: 10px;
+}
+
+textarea {
+    min-height: 8rem;
+}
+
 /* Table: left-align text so it lines up with the rest of the page */
 table {
     width: 100%;
