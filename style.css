@@ -540,7 +540,7 @@ textarea:focus-visible {
         grid-row: span 2;
     }
 
-     .card {
+    .card {
         min-height: 200px;
         padding: 1.75rem 2rem;
         background-color: #ece7df;
