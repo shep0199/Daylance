@@ -111,8 +111,8 @@ main {
 }
 
 /* Space between sections on every page */
-main > section + section,
-main > section + .cards {
+main>section+section,
+main>section+.cards {
     margin-top: 2.5rem;
 }
 
@@ -236,7 +236,7 @@ main > section + .cards {
     margin: 0;
 }
 
-.card-inner > a {
+.card-inner>a {
     color: #5e5850;
     font-size: 0.875rem;
 }
@@ -303,6 +303,21 @@ main > section + .cards {
 #upcoming-content article p:last-child {
     color: #5e5850;
     font-size: 0.875rem;
+    margin-bottom: 0;
+}
+
+/* Grid use 2: upcoming posts fill as many columns as fit */
+#upcoming-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 1rem;
+}
+
+#upcoming-content h2 {
+    grid-column: 1 / -1;
+}
+
+#upcoming-content article {
     margin-bottom: 0;
 }
 
@@ -404,4 +419,3 @@ textarea:focus-visible {
     outline: 3px solid #f59e0b;
     outline-offset: 3px;
 }
-
