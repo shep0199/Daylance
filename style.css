@@ -347,24 +347,29 @@ main>section+.cards {
     border-radius: 20px;
 }
 
-/* Grid use 2: form fields stacked with even spacing */
+/* Forms */
+
+/* Grid use 3: form fields stacked with even spacing */
 form {
     display: grid;
     gap: 1rem;
 }
 
-form>div>label {
+/* Form labels */
+form > div > label {
     display: block;
     margin-bottom: 0.25rem;
+    font-weight: 600;
 }
 
-/* Text fields fill the screen width on phones */
-form input:not([type="radio"]),
-form select,
-form textarea {
-    width: 100%;
+/* Consistent font styling for form controls */
+input,
+select,
+textarea,
+button {
+    font: inherit;
+    color: inherit;
 }
-
 
 /* Table: left-align text so it lines up with the rest of the page */
 table {
