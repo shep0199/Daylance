@@ -481,43 +481,9 @@ footer {
     font-size: 0.875rem;
 }
 
-/* Accessibility */
-
-/* Skip link: hidden above the page until a keyboard user tabs to it */
-.skip-link {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    z-index: 100;
-    background: #fffdf9;
-    color: #1b1f3b;
-    padding: 8px 16px;
-}
-
-.skip-link:focus {
-    top: 0;
-}
-
-/* Focus: a clear outline on everything a keyboard user can reach */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid #b45309;
-    outline-offset: 3px;
-}
 
 /* ===== Breakpoints (mobile-first) ===== */
 
-/* 600px: header goes side by side */
-@media (min-width: 600px) {
-    .site-header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
 
 /* 600px: 2 card columns */
 @media (min-width: 600px) {
@@ -527,6 +493,15 @@ textarea:focus-visible {
 
     #messages {
         grid-column: span 2;
+    }
+}
+
+/* 720px: header goes side by side */
+@media (min-width: 720px) {
+    .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
