@@ -338,6 +338,15 @@ main>section+.cards {
     margin-top: 0.5rem;
 }
 
+/* Confirmation page */
+#results {
+    max-width: 40rem;
+    padding: 2rem 1.5rem;
+    background-color: #fffdf9;
+    border: 1px solid #ded8ce;
+    border-radius: 20px;
+}
+
 /* Grid use 2: form fields stacked with even spacing */
 form {
     display: grid;
