@@ -321,6 +321,23 @@ main>section+.cards {
     margin-bottom: 0;
 }
 
+/* Empty uploads box: dashed border so it reads as "nothing here yet" */
+#empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background-color: #fffdf9;
+    border: 2px dashed #7c756b;
+    border-radius: 20px;
+}
+
+#empty-state p {
+    color: #5e5850;
+    margin-top: 0.5rem;
+}
+
 /* Grid use 2: form fields stacked with even spacing */
 form {
     display: grid;
