@@ -268,6 +268,27 @@ main > section + .cards {
     margin: 0;
 }
 
+/* Inner pages */
+
+/* Intro text under each page heading */
+#calendar-intro p,
+#messages-intro p,
+#income-intro p,
+#content-intro p {
+    color: #5e5850;
+    font-size: 1.125rem;
+}
+
+/* Keep lines of text readable on wide screens */
+#calendar-intro,
+#add-event,
+#messages-intro,
+#income-intro,
+#content-intro,
+#send-message {
+    max-width: 65ch;
+}
+
 /* Grid use 2: form fields stacked with even spacing */
 form {
     display: grid;
