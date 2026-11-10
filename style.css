@@ -472,6 +472,15 @@ tfoot td {
     border-top: 2px solid #1b1f3b;
 }
 
+/* Footer */
+
+footer {
+    padding: 1.5rem 0;
+    border-top: 1px solid #ded8ce;
+    color: #5e5850;
+    font-size: 0.875rem;
+}
+
 /* ===== Breakpoints (mobile-first) ===== */
 
 /* 600px: header goes side by side */
