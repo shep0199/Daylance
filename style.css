@@ -289,6 +289,23 @@ main > section + .cards {
     max-width: 65ch;
 }
 
+/* Message and post tiles on the Messages and Content pages */
+#inbox article,
+#upcoming-content article {
+    margin-bottom: 1rem;
+    padding: 1rem 1.25rem;
+    background-color: #fffdf9;
+    border: 1px solid #ded8ce;
+    border-radius: 14px;
+}
+
+#inbox article p:last-child,
+#upcoming-content article p:last-child {
+    color: #5e5850;
+    font-size: 0.875rem;
+    margin-bottom: 0;
+}
+
 /* Grid use 2: form fields stacked with even spacing */
 form {
     display: grid;
