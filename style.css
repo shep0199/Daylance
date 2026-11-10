@@ -338,6 +338,12 @@ main>section+.cards {
     margin-top: 0.5rem;
 }
 
+/* Resize empty uploads folder icon */
+#empty-state img {
+    width: 60px;
+    height: auto;
+}
+
 /* Confirmation page */
 #results {
     max-width: 40rem;
