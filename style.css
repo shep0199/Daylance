@@ -387,9 +387,11 @@ textarea {
 input[type="date"],
 input[type="time"] {
     -webkit-appearance: none;
+    appearance: none;
     display: block;
     min-height: 3rem;
 }
+
 
 /* Grid use 4: radio buttons and labels */
 fieldset {
