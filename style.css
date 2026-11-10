@@ -517,6 +517,14 @@ footer {
         grid-column: auto;
         grid-row: span 2;
     }
+
+     .card {
+        min-height: 200px;
+        padding: 1.75rem 2rem;
+        background-color: #ece7df;
+        border-color: #ece7df;
+        border-radius: 32px;
+    }
 }
 
 /* Container query: once a card is 500px+ wide, its items sit side by side */
