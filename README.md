@@ -66,7 +66,7 @@ A freelancer organizer that keeps schedules, clients, income, content and messag
 ### Note on forms
 Both forms use method="post" because they send new data that includes client details, which shouldn't appear in the URL. On GitHub Pages, submitting a form shows a "405 Not Allowed" error because static hosting can't receive POST data. The forms are built correctly and would work on a real server.
 
-## MTM1511 Week 8: Styling
+## MTM1544 Project: Styling the MTM1511 Midterm Site
 
 - One external stylesheet (style.css) linked from all 6 pages, with `box-sizing: border-box` set globally.
 - Typography: system font stack ending in `sans-serif`, all font sizes in `rem`, `line-height` 1.6 for body text and 1.2 for headings.
@@ -86,3 +86,4 @@ The colours are named by job, so a page I haven't built (for example, a Settings
 - Chrome DevTools: all 6 pages checked from 320px to 1440px, no horizontal scroll.
 - Real phone (iPhone 13, Safari): found the date and time fields running off the right edge of the Calendar page, because Safari's built-in date styling ignores `width: 100%`. Fixed with `appearance: none` (and `-webkit-appearance: none` for Safari) on those two fields. Re-tested: all pages fit with no layout breaks.
 - W3C CSS Validator: 0 syntax errors in my own code. It flags 3 lines (`container-type`, `container-name`, `@container`) for my container query. As the Week 7 Container Queries module says, "The W3C CSS Validator has not caught up yet and will report an error here. That is the tool lagging the specification, not a problem with your code." The 1 warning is `-webkit-appearance`, which I kept on purpose because Safari on iPhone needs it to keep the date and time fields on screen.
+- Lighthouse Accessibility and keyboard test re-run after styling: PASSED.
