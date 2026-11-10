@@ -507,7 +507,7 @@ textarea:focus-visible {
 /* ===== Breakpoints (mobile-first) ===== */
 
 
-/* 600px: 2 card columns */
+/* 600px: 2 card columns. At 599px one card was over 550px wide with lots of empty space. */
 @media (min-width: 600px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
@@ -518,7 +518,7 @@ textarea:focus-visible {
     }
 }
 
-/* 720px: header goes side by side */
+/* 720px: header goes side by side. Was 600px, but with padding on the nav links they wrapped onto 2 rows next to "Daylance" until about 700px. */
 @media (min-width: 720px) {
     .site-header {
         flex-direction: row;
@@ -527,7 +527,7 @@ textarea:focus-visible {
     }
 }
 
-/* 880px: desktop dashboard layout */
+/* 880px: desktop dashboard from my mockup. grid-auto-flow: column fills each column top to bottom, so Recent Messages becomes a tall column on the right. */
 @media (min-width: 880px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
