@@ -538,6 +538,10 @@ footer {
     .card-inner h3 {
         grid-column: 1 / -1;
     }
+
+    #messages article {
+        grid-column: auto;
+    }
 }
 
 /* Skip link: hidden above the page until a keyboard user tabs to it */
