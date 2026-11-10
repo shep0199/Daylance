@@ -123,22 +123,49 @@ main > section + .cards {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ded8ce;
+}
+
+/* Fluid font size: grows with the screen, never smaller than 1.75rem or bigger than 2.75rem */
+.site-header h1 {
+    font-size: clamp(1.75rem, 1rem + 3vw, 2.75rem);
+    font-weight: 800;
+    margin: 0;
 }
 
 /* Flexbox use 2: links wrap to a new line instead of squishing */
 .nav-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem 1.5rem;
+    gap: 0.25rem 0.5rem;
     list-style: none;
+    margin: 0;
     padding: 0;
+}
+
+/* Rounded boxes around each link, big enough to tap */
+.nav-list a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    color: #1b1f3b;
+    text-decoration: none;
 }
 
 /* Hover and focus states on every nav link */
 .nav-list a:hover,
 .nav-list a:focus {
-    background-color: #e6f0ff;
-    outline: 2px solid #3d5af1;
+    background-color: #e4e9fd;
+    color: #2c44c9;
+}
+
+/* The page you're on gets the light blue box, like "Home" in my mockup */
+.nav-list a[aria-current="page"] {
+    background-color: #e4e9fd;
+    color: #1b1f3b;
+    font-weight: 700;
 }
 
 /* Centring exercise */
