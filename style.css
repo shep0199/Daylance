@@ -356,7 +356,7 @@ form {
 }
 
 /* Form labels */
-form > div > label {
+form>div>label {
     display: block;
     margin-bottom: 0.25rem;
     font-weight: 600;
@@ -505,10 +505,17 @@ footer {
     }
 }
 
-/* 880px: 3 card columns */
+/* 880px: desktop dashboard layout */
 @media (min-width: 880px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+    }
+
+    #messages {
+        grid-column: auto;
+        grid-row: span 2;
     }
 }
 
