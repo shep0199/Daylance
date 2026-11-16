@@ -513,7 +513,7 @@ footer {
     padding: 0.5rem 1rem;
 }
 
-.skip-link:focus {
+.skip-link:focus-visible {
     top: 0;
 }
 
