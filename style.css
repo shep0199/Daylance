@@ -602,8 +602,8 @@ textarea:focus-visible {
     }
 }
 
-/* Reduced motion: respects visitors who have asked their system to reduce animation. 
-!important is one of the few legitimate uses here, because this rule has to override any other rule that sets motion. */
+/* Reduced motion: respects visitors who have asked their system to reduce animation.
+   !important is one of the few legitimate uses here, because this rule has to override any other rule that sets motion. */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
