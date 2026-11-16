@@ -101,7 +101,7 @@ img {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100dvh;
-    max-width: 1200px;
+    max-width: 75rem;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -343,7 +343,7 @@ main>section+.cards {
 
 /* Resize empty uploads folder icon */
 #empty-state img {
-    width: 60px;
+    width: 3.75rem;
     height: auto;
 }
 
@@ -510,7 +510,7 @@ footer {
     z-index: 100;
     background-color: #fffdf9;
     color: #1b1f3b;
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
 }
 
 .skip-link:focus {
@@ -564,7 +564,7 @@ textarea:focus-visible {
     }
 
     .card {
-        min-height: 200px;
+        min-height: 12.5rem;
         padding: 1.75rem 2rem;
         background-color: #ece7df;
         border-color: transparent;
@@ -576,7 +576,7 @@ textarea:focus-visible {
 @container card (min-width: 500px) {
     .card-inner {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(8.75rem, 1fr));
         gap: 1rem;
     }
 
