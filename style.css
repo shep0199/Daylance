@@ -449,7 +449,7 @@ button {
 
 /* Button interactions */
 button:hover,
-button:focus {
+button:focus-visible {
     background-color: #2c44c9;
 }
 
