@@ -157,7 +157,7 @@ main>section+.cards {
 
 /* Hover and focus states on every nav link */
 .nav-list a:hover,
-.nav-list a:focus {
+.nav-list a:focus-visible {
     background-color: #e4e9fd;
     color: #2c44c9;
 }
@@ -515,6 +515,19 @@ footer {
 
 .skip-link:focus {
     top: 0;
+}
+
+/* Visually hidden: read by screen readers, not shown on screen */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* Focus: a clear outline on everything a keyboard user can reach */
