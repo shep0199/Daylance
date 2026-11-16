@@ -601,3 +601,16 @@ textarea:focus-visible {
         grid-column: auto;
     }
 }
+
+/* Reduced motion: respects visitors who have asked their system to reduce animation. 
+!important is one of the few legitimate uses here, because this rule has to override any other rule that sets motion. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
