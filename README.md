@@ -87,3 +87,34 @@ The colours are named by job, so a page I haven't built (for example, a Settings
 - Real phone (iPhone 13, Safari): found the date and time fields running off the right edge of the Calendar page, because Safari's built-in date styling ignores `width: 100%`. Fixed with `appearance: none` (and `-webkit-appearance: none` for Safari) on those two fields. Re-tested: all pages fit with no layout breaks.
 - W3C CSS Validator: 0 syntax errors in my own code. It flags 3 lines (`container-type`, `container-name`, `@container`) for my container query. As the Week 7 Container Queries module says, "The W3C CSS Validator has not caught up yet and will report an error here. That is the tool lagging the specification, not a problem with your code." The 1 warning is `-webkit-appearance`, which I kept on purpose because Safari on iPhone needs it to keep the date and time fields on screen.
 - Lighthouse Accessibility and keyboard test re-run after styling: PASSED.
+
+## MTM1544 Week 10: Accessible Styling Pass
+
+### Keyboard test (before changes)
+- PASSED on all 6 pages with the mouse put away. Every link, button and form field could be reached and used with Tab and Enter, focus was always visible, and both forms worked with only the keyboard. No issues found.
+
+### Changes
+- **Focus styles:** I already had a `:focus-visible` outline (`3px solid #b45309`, `outline-offset: 3px`) on links, buttons, inputs, selects and textareas. Contrast on every background it sits on: 4.74:1 on Page, 4.94:1 on Surface, 4.08:1 on Card and 4.15:1 on Brand tint. All are over 3:1. I changed the bare `:focus` on the nav links and buttons to `:focus-visible` so the hover colour doesn't show after a mouse click.
+- **rem:** Most of my sizes were already in rem. I converted the last few px values: the wrapper `max-width` (75rem), the card `min-height` (12.5rem), the skip link padding, the container query `minmax` and the empty-state icon width. I kept px on borders, border-radius, the skip link's `top: -100px` and the 1px `.visually-hidden` box, because those shouldn't grow with text.
+- **Visually hidden:** I added the `.visually-hidden` class and used it on the Recent Messages headings. The icon squares are a `::before` pseudo-element, so screen readers skip them, and the headings only read as "Email", "Messenger" and "Instagram". Now they read as "Email messages", "Messenger messages" and so on.
+- **Skip link:** On all 6 pages, pointing to `#main-content`. It has `top`, `left`, `z-index` and `background-color`, so it actually shows up when it gets focus.
+- **Reduced motion:** Added the `prefers-reduced-motion` block at the bottom of style.css. `!important` is OK here because this rule has to override any other rule that sets motion.
+
+### Week 10 testing
+- **Reduced motion:** Turned on `prefers-reduced-motion: reduce` in the DevTools Rendering panel. The Styles panel showed the rule at the bottom of style.css applying, with all 4 properties active. Nothing visibly changed because I don't have any animations yet. It'll matter in Week 13.
+- **200% zoom:** PASSED on all 6 pages in Chrome. Nothing was cut off or overlapped, there was no sideways scrolling, and everything was still reachable. I think it held up because my sizes are in rem, the cards use `min-height` instead of a fixed height, and the nav links wrap with `flex-wrap`.
+- **Lighthouse Accessibility:** PASSED with 100% on all 6 pages.
+- **axe DevTools:** PASSED with 0 issues on all 6 pages (WCAG 2.1 AA).
+- **Keyboard test (after changes):** PASSED on all 6 pages.
+  - The skip link showed up on the first Tab, and Enter took me past the nav into the main content.
+  - The orange focus ring showed on everything, including the blue "Add to Calendar" button. The 3px offset leaves a gap of page colour so the ring doesn't blend into the blue.
+  - On the desktop dashboard (880px+), Tab went through the cards in the order I read them, even though `grid-auto-flow: column` changes the layout.
+  - Clicking a button with the mouse showed no outline, but tabbing to it did, so `:focus-visible` is working.
+
+### What the manual test caught that automation missed
+Lighthouse gave me 100% and axe found 0 issues, but neither one could check these:
+- **Bare `:focus` rules:** Both tools passed the site while my nav links and buttons still used bare `:focus`. I only caught this by going through my stylesheet against the assignment requirements.
+- **Recent Messages headings:** Both tools passed headings that only said "Email", "Messenger" and "Instagram". A heading just has to exist to pass. It took me looking at it to see it didn't make sense without the icon.
+- **Skip link:** The tools can tell the link is there, but not that it actually shows up and moves focus to the main content. I had to tab to it.
+- **Tab order:** Nothing automated compares the tab order to the order the cards appear on screen. I checked that myself on the desktop layout.
+- **Mouse vs. keyboard focus:** I had to click and then tab to make sure the outline only shows for keyboard users.
