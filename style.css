@@ -220,7 +220,7 @@ main>section+.cards {
 /* Each card is a container, so its layout can react to its own width. Phone cards are white with a thin border, like my phone mockup. */
 .card {
     padding: 1.5rem;
-    background-color: var(--brandcol);
+    background-color: var(--brandcol2);
     border: 2px solid #ded8ce;
     border-radius: 20px;
     container-type: inline-size;
