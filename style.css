@@ -37,6 +37,12 @@
    Focus outline has outline-offset: 3px, so the page colour sits between it and blue buttons
    ===================================================== */
 
+:root {
+    --brandcol: #faf9f6;
+    --brandcol2: #bb9faf;
+}
+
+
 /* Base */
 
 /* Padding and border sit inside an element's width */
