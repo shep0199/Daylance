@@ -237,8 +237,10 @@
         4. Added og:title, og:description, og:image, og:url and og:type, all with absolute URLs,
            plus og:image:width and og:image:height.
         5. Wrapped table dates in <time datetime> so the year is on the page.
-        6. Added Event JSON-LD for the 3 events in the "Your Week" table. Event fits because
-           the table lists events. No location, because the page doesn't show one.
+        6. Added Event JSON-LD for the 3 events in the "Your Week" table. I considered
+           ItemList (too generic, it only says "a list") and Schedule (meant for repeating
+           events, and these happen once). Event fits best because each row is a one-time
+           event with a name, date and time. No location, because the page doesn't show one.
         7. Added 2 contextual links in the intro: "freelance income tracker" and "upcoming content plan".
         8. Linked result.html under the form. It was an orphan (only reachable by form submit,
            which fails on GitHub Pages). All 6 pages are now reachable from Home.
