@@ -229,4 +229,28 @@
         - Tested on Live Server, Lighthouse 13.5.0, Emulated Desktop, SEO only
         - Score: 90
         - Flagged: "Document does not have a meta description"
+
+    Changes:
+        1. Moved site name out of <h1> into <p class="site-name">. <h1> is now "Calendar".
+        2. Added keyword title, meta description and canonical link (fixes the flagged item).
+        3. Added a 1200x630 preview image (images/og-calendar-image.png).
+        4. Added og:title, og:description, og:image, og:url and og:type, all with absolute URLs,
+           plus og:image:width and og:image:height.
+        5. Wrapped table dates in <time datetime> so the year is on the page.
+        6. Added Event JSON-LD for the 3 events in the "Your Week" table. Event fits because
+           the table lists events. No location, because the page doesn't show one.
+        7. Added 2 contextual links in the intro: "freelance income tracker" and "upcoming content plan".
+        8. Linked result.html under the form. It was an orphan (only reachable by form submit,
+           which fails on GitHub Pages). All 6 pages are now reachable from Home.
+
+     Lighthouse SEO after:
+        - Same setup as before
+        - Score: 100
+        - Cleared: "Document does not have a meta description"
+
+     Validation:
+        - Schema Markup Validator: PASSED, 0 errors, 3 Event items detected
+        - W3C Markup Validator: PASSED, 0 errors
+        - Facebook Sharing Debugger: preview card shows image, title and description.
+          Only warning is fb:app_id, which is Facebook-only and not part of Open Graph.
 -->
