@@ -88,7 +88,7 @@ h2,
 h3,
 h4 {
     line-height: 1.2;
-    margin: 0 0 0.5rem;
+    margin: 0 0 var(--space-sm);
 }
 
 h2 {
@@ -104,7 +104,7 @@ h4 {
 }
 
 p {
-    margin: 0 0 0.5rem;
+    margin: 0 0 var(--space-sm);
 }
 
 a {
@@ -126,17 +126,17 @@ img {
     min-height: 100dvh;
     max-width: 75rem;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 var(--space-md);
 }
 
 main {
-    padding: 1.5rem 0 2.5rem;
+    padding: var(--space-lg) 0 var(--space-xl);
 }
 
 /* Space between sections on every page */
 main>section+section,
 main>section+.cards {
-    margin-top: 2.5rem;
+    margin-top: var(--space-xl);
 }
 
 /* Navigation bar */
@@ -146,9 +146,9 @@ main>section+.cards {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid #ded8ce;
+    gap: var(--space-sm);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--colour-divider);
 }
 
 /* Fluid font size: grows with the screen, never smaller than 1.75rem or bigger than 2.75rem */
@@ -163,7 +163,7 @@ main>section+.cards {
 .nav-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem 0.5rem;
+    gap: var(--space-xs) var(--space-sm);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -172,7 +172,7 @@ main>section+.cards {
 /* Rounded boxes around each link, big enough to tap */
 .nav-list a {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: var(--space-sm) var(--space-md);
     border-radius: 10px;
     color: var(--colour-text);
     text-decoration: none;
@@ -210,7 +210,7 @@ main>section+.cards {
 
 #welcome img {
     border-radius: 50%;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-md);
 }
 
 #welcome h1 {
@@ -229,14 +229,14 @@ main>section+.cards {
 .cards {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--space-lg);
 }
 
 /* Each card is a container, so its layout can react to its own width. Phone cards are white with a thin border, like my phone mockup. */
 .card {
-    padding: 1.5rem;
+    padding: var(--space-lg);
     background-color: var(--colour-card);
-    border: 2px solid #ded8ce;
+    border: 2px solid var(--colour-divider);
     border-radius: 20px;
     container-type: inline-size;
     container-name: card;
@@ -253,7 +253,7 @@ main>section+.cards {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: baseline;
-    gap: 0.75rem;
+    gap: var(--space-sm);
 }
 
 .card-inner h2 {
@@ -275,7 +275,7 @@ main>section+.cards {
     grid-column: 1 / -1;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: var(--space-sm);
 }
 
 /* The white square from my mockup, drawn with a pseudo-element */
@@ -284,8 +284,8 @@ main>section+.cards {
     width: 2.5rem;
     height: 2.5rem;
     flex-shrink: 0;
-    background-color: var(--colour-brand);
-    border: 1px solid #ded8ce;
+    background-color: var(--colour-page);
+    border: 1px solid var(--colour-divider);
     border-radius: 8px;
 }
 
@@ -301,7 +301,7 @@ main>section+.cards {
 #messages-intro p,
 #income-intro p,
 #content-intro p {
-    color: #5e5850;
+    color: var(--colour-muted);
     font-size: 1.125rem;
 }
 
@@ -318,16 +318,16 @@ main>section+.cards {
 /* Message and post tiles on the Messages and Content pages */
 #inbox article,
 #upcoming-content article {
-    margin-bottom: 1rem;
-    padding: 1rem 1.25rem;
-    background-color: #fffdf9;
-    border: 1px solid #ded8ce;
+    margin-bottom: var(--space-md);
+    padding: var(--space-md);
+    background-color: var(--colour-surface);
+    border: 1px solid var(--colour-divider);
     border-radius: 14px;
 }
 
 #inbox article p:last-child,
 #upcoming-content article p:last-child {
-    color: #5e5850;
+    color: var(--colour-muted);
     font-size: 0.875rem;
     margin-bottom: 0;
 }
@@ -336,7 +336,7 @@ main>section+.cards {
 #upcoming-content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-    gap: 1rem;
+    gap: var(--space-md);
 }
 
 #upcoming-content h2 {
@@ -353,15 +353,15 @@ main>section+.cards {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 2.5rem 1rem;
-    background-color: #fffdf9;
-    border: 2px dashed #7c756b;
+    padding: var(--space-xl) var(--space-md);
+    background-color: var(--colour-surface);
+    border: 2px dashed var(--colour-divider);
     border-radius: 20px;
 }
 
 #empty-state p {
-    color: #5e5850;
-    margin-top: 0.5rem;
+    color: var(--colour-muted);
+    margin-top: var(--space-sm);
 }
 
 /* Resize empty uploads folder icon */
@@ -373,9 +373,9 @@ main>section+.cards {
 /* Confirmation page */
 #results {
     max-width: 40rem;
-    padding: 2rem 1.5rem;
-    background-color: #fffdf9;
-    border: 1px solid #ded8ce;
+    padding: var(--space-lg) var(--space-md);
+    background-color: var(--colour-surface);
+    border: 1px solid var(--colour-divider);
     border-radius: 20px;
 }
 
@@ -384,13 +384,13 @@ main>section+.cards {
 /* Grid use 3: form fields stacked with even spacing */
 form {
     display: grid;
-    gap: 1rem;
+    gap: var(--space-md);
 }
 
 /* Form labels */
 form>div>label {
     display: block;
-    margin-bottom: 0.25rem;
+    margin-bottom: var(--space-xs);
     font-weight: 600;
 }
 
@@ -409,9 +409,9 @@ form select,
 form textarea {
     width: 100%;
     min-width: 0;
-    padding: 0.625rem 0.75rem;
-    background-color: #fffdf9;
-    border: 1px solid #7c756b;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--colour-surface);
+    border: 1px solid var(--colour-divider);
     border-radius: 10px;
 }
 
@@ -434,11 +434,11 @@ fieldset {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--space-sm);
     margin: 0;
-    padding: 1rem;
-    background-color: #fffdf9;
-    border: 1px solid #7c756b;
+    padding: var(--space-md);
+    background-color: var(--colour-surface);
+    border: 1px solid var(--colour-divider);
     border-radius: 10px;
 }
 
@@ -461,9 +461,9 @@ fieldset input[type="radio"] {
 
 /* Form buttons */
 button {
-    padding: 0.75rem 1.5rem;
+    padding: var(--space-md) var(--space-lg);
     background-color: var(--colour-brand);
-    color: #ffffff;
+    color: var(--colour-on-brand);
     font-weight: 600;
     border: 0;
     border-radius: 10px;
@@ -482,7 +482,7 @@ button:focus-visible {
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #fffdf9;
+    background-color: var(--colour-surface);
     font-size: 0.875rem;
 }
 
@@ -490,36 +490,36 @@ caption,
 th,
 td {
     text-align: left;
-    padding: 0.625rem 0.5rem;
+    padding: var(--space-sm);
 }
 
 caption {
     padding-left: 0;
-    color: #5e5850;
+    color: var(--colour-muted);
     font-weight: 600;
 }
 
 thead th {
     background-color: var(--colour-card);
-    border-bottom: 2px solid #1b1f3b;
+    border-bottom: 2px solid var(--colour-text);
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f6f2eb;
+    background-color: var(--colour-stripe);
 }
 
 tfoot th,
 tfoot td {
     font-weight: 700;
-    border-top: 2px solid #1b1f3b;
+    border-top: 2px solid var(--colour-text);
 }
 
 /* Footer */
 
 footer {
-    padding: 1.5rem 0;
-    border-top: 1px solid #ded8ce;
-    color: #5e5850;
+    padding: var(--space-lg) 0;
+    border-top: 1px solid var(--colour-divider);
+    color: var(--colour-muted);
     font-size: 0.875rem;
 }
 
@@ -531,9 +531,9 @@ footer {
     top: -100px;
     left: 0;
     z-index: 100;
-    background-color: #fffdf9;
-    color: #1b1f3b;
-    padding: 0.5rem 1rem;
+    background-color: var(--colour-page);
+    color: var(--colour-text);
+    padding: var(--space-sm) var(--space-md);
 }
 
 .skip-link:focus-visible {
@@ -559,7 +559,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-    outline: 3px solid #b45309;
+    outline: 3px solid var(--colour-focus);
     outline-offset: 3px;
 }
 
@@ -601,7 +601,7 @@ textarea:focus-visible {
 
     .card {
         min-height: 12.5rem;
-        padding: 1.75rem 2rem;
+        padding: var(--space-lg) var(--space-xl);
         background-color: var(--colour-card);
         border-color: transparent;
         border-radius: 32px;
@@ -613,7 +613,7 @@ textarea:focus-visible {
     .card-inner {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(8.75rem, 1fr));
-        gap: 1rem;
+        gap: var(--space-md);
     }
 
     .card-inner h2 {
