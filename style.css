@@ -17,12 +17,13 @@
    Stripe        #F6F2EB   #39312D   alternating table rows
    Button text   #FFFFFF   #FFFFFF   text on buttons
    Focus         #6C3205   #F5BF76   keyboard focus
-   Card hover    #1B1F3B  #8DDCC8   card hover border
+   Card hover    #1B1F3B   #8DDCC8   card hover border
 
-   Dark theme contrast testing
+   Contrast testing
    Checked using https://webaim.org/resources/contrastchecker/
    Text requires 4.5:1 and meaningful UI borders require 3:1.
 
+   Dark theme text
    Main text on page: 14.81:1
    Main text on cards: 9.25:1
    Main text on brand tint: 8.38:1
@@ -30,8 +31,12 @@
    Main text on stripe: 11.24:1
    Muted text on page: 9.16:1
    Muted text on surface: 7.72:1
+   Muted text on card: 5.72:1
+   Muted text on brand tint: 5.18:1
    Link on page: 10.54:1
    Link on surface: 8.88:1
+   Link on card: 6.58:1
+   Link on brand tint: 5.96:1
    Button text on brand: 5.15:1
    Button text on brand hover: 7.36:1
 
@@ -47,16 +52,42 @@
    Radio button on surface: 8.88:1
    Placeholder text (muted) on surface: 7.72:1
 
-   Light theme focus states
+   Light theme text
+   Main text on page: 14.98:1
+   Main text on cards: 5.23:1
+   Main text on brand tint: 7.08:1
+   Main text on surface: 15.83:1
+   Main text on stripe: 14.41:1
+   Muted text on page: 6.55:1
+   Muted text on surface: 6.92:1
+   Link on page: 4.80:1
+   Link on surface: 5.07:1
+   Button text on brand: 5.15:1
+   Button text on brand hover: 7.36:1
+
+   Light theme borders and focus states
+   Field border on surface: 4.48:1
+   Field border on page: 4.24:1
    Focus on page: 9.33:1
    Focus on card: 3.26:1
    Focus on brand tint: 4.41:1
    Focus on surface: 9.86:1
+   Card hover border on card: 5.23:1
+   Card hover border on brand tint: 7.08:1
+   Radio button on surface: 5.07:1
+   Placeholder text (muted) on surface: 6.92:1
 
-   Focus darkened from #B45309 to #6C3205 (same hue) because the original failed 3:1 on cards (1.63:1) and brand tint (2.21:1).
+   Light theme pairs that fail
+   Muted text on card: 2.28:1 and link on card: 1.67:1.
+   Neither colour is used on cards, so these pairs never appear.
 
-   During testing, I found that the original green card hover border did not have enough contrast in dark mode.
-   I created a separate variable for the hover border so I could use a lighter green in dark mode without changing the button colour.
+   Changes made because of testing
+   The original green card hover border did not have enough
+   contrast in dark mode, so I created a separate variable for
+   the hover border and used a lighter green in dark mode
+   without changing the button colour.
+   Focus darkened from #B45309 to #6C3205 (same hue) because the
+   original failed 3:1 on cards (1.63:1) and brand tint (2.21:1).
 
    The dark theme uses the same styling rules as the
    light theme. Only the colour variables are overridden.
