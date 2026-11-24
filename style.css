@@ -243,12 +243,19 @@ main>section+.cards {
 
 /* Each card is a container, so its layout can react to its own width. Phone cards are white with a thin border, like my phone mockup. */
 .card {
+    --card-background: var(--colour-card);
+
     padding: var(--space-lg);
-    background-color: var(--colour-card);
+    background-color: var(--card-background);
     border: 2px solid var(--colour-divider);
     border-radius: var(--radius-card);
     container-type: inline-size;
     container-name: card;
+}
+
+/* Highlighted card variant */
+.card-highlight {
+    --card-background: var(--colour-brand-tint);
 }
 
 /* Hover and focus states on the cards */
@@ -611,7 +618,6 @@ textarea:focus-visible {
     .card {
         min-height: 12.5rem;
         padding: var(--space-lg) var(--space-xl);
-        background-color: var(--colour-card);
         border-color: transparent;
         border-radius: var(--radius-card-large);
     }
