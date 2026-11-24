@@ -118,3 +118,9 @@ Lighthouse gave me 100% and axe found 0 issues, but neither one could check thes
 - **Skip link:** The tools can tell the link is there, but not that it actually shows up and moves focus to the main content. I had to tab to it.
 - **Tab order:** Nothing automated compares the tab order to the order the cards appear on screen. I checked that myself on the desktop layout.
 - **Mouse vs. keyboard focus:** I had to click and then tab to make sure the outline only shows for keyboard users.
+
+## Week 11: Variant via override
+
+The highlighted card is built by overriding one variable, `--card-background`, instead of redeclaring `background-color`. Because `var()` is resolved on each element, the `.card` rule's background picks up the brand tint wherever `.card-highlight` is applied.
+
+The navigation is one nested block. `a` without `&` is a descendant selector (`.nav-list a`), while `&:hover` and `&[aria-current="page"]` attach to the link itself

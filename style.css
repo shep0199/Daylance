@@ -248,7 +248,9 @@ main>section+.cards {
     margin: 0;
 }
 
-/* Flexbox use 2: links wrap to a new line instead of squishing */
+/* Flexbox use 2: links wrap to a new line instead of squishing.
+   Nested component: "a" with no & is a descendant (.nav-list a).
+   &:hover attaches to the link itself (.nav-list a:hover). */
 .nav-list {
     display: flex;
     flex-wrap: wrap;
@@ -256,28 +258,26 @@ main>section+.cards {
     list-style: none;
     margin: 0;
     padding: 0;
-}
 
-/* Navigation links and their interaction states */
-.nav-list a {
-    display: block;
-    padding: var(--space-sm) var(--space-md);
-    border-radius: var(--radius-control);
-    color: var(--colour-text);
-    text-decoration: none;
-
-    /* Hover and keyboard focus */
-    &:hover,
-    &:focus-visible {
-        background-color: var(--colour-brand-tint);
+    /* Descendant: the links inside the list */
+    a {
+        display: block;
+        padding: var(--space-sm) var(--space-md);
+        border-radius: var(--radius-control);
         color: var(--colour-text);
-    }
+        text-decoration: none;
 
-    /* Highlights the current page */
-    &[aria-current="page"] {
-        background-color: var(--colour-brand-tint);
-        color: var(--colour-text);
-        font-weight: 700;
+        /* Hover and keyboard focus on the link itself */
+        &:hover,
+        &:focus-visible {
+            background-color: var(--colour-brand-tint);
+        }
+
+        /* Highlights the current page */
+        &[aria-current="page"] {
+            background-color: var(--colour-brand-tint);
+            font-weight: 700;
+        }
     }
 }
 
@@ -333,7 +333,13 @@ main>section+.cards {
     container-name: card;
 }
 
-/* Highlighted card variant */
+/* Highlighted card variant, built by variable override only.
+   .card sets background-color: var(--card-background).
+   var() is resolved on each element using that element's own
+   value of the variable. .card-highlight has the same specificity
+   as .card and comes later, so on a highlighted card
+   --card-background becomes the brand tint. The background-color
+   property is never redeclared, only the variable changes. */
 .card-highlight {
     --card-background: var(--colour-brand-tint);
 }
