@@ -45,6 +45,7 @@
    Card hover border on card: 6.58:1
    Card hover border on brand tint: 5.96:1
    Radio button on surface: 8.88:1
+   Placeholder text (muted) on surface: 7.72:1
 
    During testing, I found that the original green card hover border did not have enough contrast in dark mode.
    I created a separate variable for the hover border so I could use a lighter green in dark mode without changing the button colour.
@@ -54,6 +55,8 @@
    ===================================================== */
 
 :root {
+    color-scheme: light dark;
+
     --colour-page: #FAF6F5;
     --colour-card: #A68E84;
     --colour-brand-tint: #6ABAAE;
@@ -471,6 +474,12 @@ form textarea {
 
 textarea {
     min-height: 8rem;
+}
+
+/* Placeholder text uses the muted colour so it stays readable in both themes */
+::placeholder {
+    color: var(--colour-muted);
+    opacity: 1;
 }
 
 /* iOS Safari fix: date and time fields ignore width: 100% until Safari's built-in styling is turned off. min-height keeps them the same height as the other fields when empty. */
