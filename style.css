@@ -42,6 +42,8 @@
     --colour-card: #A68E84;
     --colour-brand-tint: #6ABAAE;
     --colour-brand: #247A6D;
+    --colour-link: #247A6D;
+    --colour-brand-hover: #1B6056;
     --colour-text: #1b1f3b;
     --colour-muted: #5e5850;
     --colour-surface: #fffdf9;
@@ -68,6 +70,23 @@
 
 }
 
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --colour-page: #201D1B;
+        --colour-card: #493D37;
+        --colour-brand-tint: #294C45;
+        --colour-brand: #247A6D;
+        --colour-text: #F5F0EC;
+        --colour-muted: #C7BEB7;
+        --colour-surface: #302A27;
+        --colour-divider: #5C514B;
+        --colour-border: #A99B91;
+        --colour-stripe: #39312D;
+        --colour-link: #8DDCC8;
+        --colour-focus: #F5BF76;
+    }
+}
 
 /* Base */
 
@@ -117,7 +136,7 @@ p {
 }
 
 a {
-    color: var(--colour-brand);
+    color: var(--colour-link);
 }
 
 /* Responsive images */
@@ -191,7 +210,7 @@ main>section+.cards {
 .nav-list a:hover,
 .nav-list a:focus-visible {
     background-color: var(--colour-brand-tint);
-    color: var(--colour-brand);
+    color: var(--colour-text);
 }
 
 /* The page you're on gets the light blue box, like "Home" in my mockup */
@@ -489,7 +508,7 @@ button {
 /* Button interactions */
 button:hover,
 button:focus-visible {
-    background-color: var(--colour-brand);
+    background-color: var(--colour-brand-hover);
 }
 
 /* Tables */
