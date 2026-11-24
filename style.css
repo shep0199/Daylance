@@ -96,21 +96,21 @@
 :root {
     color-scheme: light dark;
 
+    /* Colour, named for purpose (same order as the palette table) */
     --colour-page: #FAF6F5;
     --colour-card: #A68E84;
     --colour-brand-tint: #6ABAAE;
-    --colour-brand-hover: #1B6056;
-    --colour-text: #1b1f3b;
-    --colour-muted: #5e5850;
-    --colour-surface: #fffdf9;
-    --colour-divider: #ded8ce;
-    --colour-border: #7c756b;
-    --colour-stripe: #f6f2eb;
-    --colour-on-brand: #ffffff;
-    --colour-focus: #6B2A0A;
-
     --colour-brand: #247A6D;
     --colour-link: #247A6D;
+    --colour-brand-hover: #1B6056;
+    --colour-text: #1B1F3B;
+    --colour-muted: #5E5850;
+    --colour-surface: #FFFDF9;
+    --colour-divider: #DED8CE;
+    --colour-border: #7C756B;
+    --colour-stripe: #F6F2EB;
+    --colour-on-brand: #FFFFFF;
+    --colour-focus: #6C3205;
     --colour-card-hover: var(--colour-text);
 
     /* Spacing, on a consistent scale */
@@ -128,24 +128,32 @@
     --radius-icon: 8px;
     --radius-avatar: 50%;
 
+    /* Type sizes */
+    --size-small: 0.875rem;
+    --size-body: 1rem;
+    --size-lead: 1.125rem;
+    --size-subheading: 1.25rem;
+
+    /* Border widths */
+    --border-width: 1px;
+    --border-width-strong: 2px;
+    --focus-width: 3px;
 }
 
-/* Dark theme */
 @media (prefers-color-scheme: dark) {
     :root {
         --colour-page: #201D1B;
         --colour-card: #493D37;
         --colour-brand-tint: #294C45;
-        --colour-brand: #247A6D;
+        --colour-link: #8DDCC8;
         --colour-text: #F5F0EC;
         --colour-muted: #C7BEB7;
         --colour-surface: #302A27;
         --colour-divider: #5C514B;
         --colour-border: #A99B91;
         --colour-stripe: #39312D;
-        --colour-link: #8DDCC8;
-        --colour-card-hover: var(--colour-link);
         --colour-focus: #F5BF76;
+        --colour-card-hover: var(--colour-link);
     }
 }
 
@@ -166,7 +174,7 @@ html {
 body {
     margin: 0;
     font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 1rem;
+    font-size: var(--size-body);
     line-height: 1.6;
     color: var(--colour-text);
     background-color: var(--colour-page);
@@ -185,11 +193,11 @@ h2 {
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: var(--size-subheading);
 }
 
 h4 {
-    font-size: 1rem;
+    font-size: var(--size-body);
 }
 
 p {
@@ -237,7 +245,7 @@ main>section+.cards {
     align-items: flex-start;
     gap: var(--space-sm);
     padding: var(--space-md) 0;
-    border-bottom: 1px solid var(--colour-divider);
+    border-bottom: var(--border-width) solid var(--colour-divider);
 }
 
 /* Fluid font size: grows with the screen, never smaller than 1.75rem or bigger than 2.75rem */
@@ -309,7 +317,7 @@ main>section+.cards {
 
 #welcome p {
     color: var(--colour-muted);
-    font-size: 1.25rem;
+    font-size: var(--size-subheading);
 }
 
 /* Card row */
@@ -321,13 +329,14 @@ main>section+.cards {
     gap: var(--space-lg);
 }
 
-/* Each card is a container, so its layout can react to its own width. Phone cards are white with a thin border, like my phone mockup. */
+/* Each card is a container, so its layout can react to its own width. On phones, 
+cards have a thin divider border; on desktop the border is transparent until hover. */
 .card {
     --card-background: var(--colour-card);
 
     padding: var(--space-lg);
     background-color: var(--card-background);
-    border: 2px solid var(--colour-divider);
+    border: var(--border-width-strong) solid var(--colour-divider);
     border-radius: var(--radius-card);
     container-type: inline-size;
     container-name: card;
@@ -360,12 +369,12 @@ main>section+.cards {
 
 .card-inner h2 {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: var(--size-subheading);
 }
 
 .card-inner>a {
     color: var(--colour-text);
-    font-size: 0.875rem;
+    font-size: var(--size-small);
 }
 
 /* Responsive layout observation: At approximately 528px, the navigation becomes cramped as the site name and links sit too close together. The cards wrap into a single column as intended. */
@@ -380,20 +389,20 @@ main>section+.cards {
     gap: var(--space-sm);
 }
 
-/* The white square from my mockup, drawn with a pseudo-element */
+/* The icon square from my mockup, drawn with a pseudo-element */
 #messages article::before {
     content: "";
     width: 2.5rem;
     height: 2.5rem;
     flex-shrink: 0;
     background-color: var(--colour-page);
-    border: 1px solid var(--colour-divider);
+    border: var(--border-width) solid var(--colour-divider);
     border-radius: var(--radius-icon);
 }
 
 #messages h3 {
     margin: 0;
-    font-size: 1rem;
+    font-size: var(--size-body);
 }
 
 /* Inner pages */
@@ -404,7 +413,7 @@ main>section+.cards {
 #income-intro p,
 #content-intro p {
     color: var(--colour-muted);
-    font-size: 1.125rem;
+    font-size: var(--size-lead);
 }
 
 /* Keep lines of text readable on wide screens */
@@ -423,14 +432,14 @@ main>section+.cards {
     margin-bottom: var(--space-md);
     padding: var(--space-md);
     background-color: var(--colour-surface);
-    border: 1px solid var(--colour-divider);
+    border: var(--border-width) solid var(--colour-divider);
     border-radius: var(--radius-tile);
 }
 
 #inbox article p:last-child,
 #upcoming-content article p:last-child {
     color: var(--colour-muted);
-    font-size: 0.875rem;
+    font-size: var(--size-small);
     margin-bottom: 0;
 }
 
@@ -457,7 +466,7 @@ main>section+.cards {
     text-align: center;
     padding: var(--space-xl) var(--space-md);
     background-color: var(--colour-surface);
-    border: 2px dashed var(--colour-border);
+    border: var(--border-width-strong) dashed var(--colour-border);
     border-radius: var(--radius-card);
 }
 
@@ -477,7 +486,7 @@ main>section+.cards {
     max-width: 40rem;
     padding: var(--space-lg) var(--space-md);
     background-color: var(--colour-surface);
-    border: 1px solid var(--colour-divider);
+    border: var(--border-width) solid var(--colour-divider);
     border-radius: var(--radius-card);
 }
 
@@ -513,7 +522,7 @@ form textarea {
     min-width: 0;
     padding: var(--space-sm) var(--space-md);
     background-color: var(--colour-surface);
-    border: 1px solid var(--colour-border);
+    border: var(--border-width) solid var(--colour-border);
     border-radius: var(--radius-control);
 }
 
@@ -546,7 +555,7 @@ fieldset {
     margin: 0;
     padding: var(--space-md);
     background-color: var(--colour-surface);
-    border: 1px solid var(--colour-border);
+    border: var(--border-width) solid var(--colour-border);
     border-radius: var(--radius-control);
 }
 
@@ -591,7 +600,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     background-color: var(--colour-surface);
-    font-size: 0.875rem;
+    font-size: var(--size-small);
 }
 
 caption,
@@ -609,7 +618,7 @@ caption {
 
 thead th {
     background-color: var(--colour-card);
-    border-bottom: 2px solid var(--colour-text);
+    border-bottom: var(--border-width-strong) solid var(--colour-text);
 }
 
 tbody tr:nth-child(even) {
@@ -619,16 +628,16 @@ tbody tr:nth-child(even) {
 tfoot th,
 tfoot td {
     font-weight: 700;
-    border-top: 2px solid var(--colour-text);
+    border-top: var(--border-width-strong) solid var(--colour-text);
 }
 
 /* Footer */
 
 footer {
     padding: var(--space-lg) 0;
-    border-top: 1px solid var(--colour-divider);
+    border-top: var(--border-width) solid var(--colour-divider);
     color: var(--colour-muted);
-    font-size: 0.875rem;
+    font-size: var(--size-small);
 }
 
 /* Accessibility */
@@ -667,8 +676,8 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-    outline: 3px solid var(--colour-focus);
-    outline-offset: 3px;
+    outline: var(--focus-width) solid var(--colour-focus);
+    outline-offset: var(--focus-width);
 }
 
 /* ===== Breakpoints (mobile-first) ===== */
