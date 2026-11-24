@@ -37,12 +37,67 @@
    Focus outline has outline-offset: 3px, so the page colour sits between it and blue buttons
    ===================================================== */
 
+/* =====================================================
+   Week 11 UPDATED: Daylance colour palette - Light and Dark Themes
+   Named by purpose rather than appearance.
+
+   Name          Light     Dark      Used for
+   Page          #FAF6F5   #201D1B   page background
+   Card          #A68E84   #493D37   dashboard cards
+   Brand tint    #6ABAAE   #294C45   nav and highlighted card
+   Brand         #247A6D   #247A6D   buttons and accents
+   Link          #247A6D   #8DDCC8   links
+   Brand hover   #1B6056   #1B6056   button hover
+   Text          #1B1F3B   #F5F0EC   main text and headings
+   Muted         #5E5850   #C7BEB7   secondary text
+   Surface       #FFFDF9   #302A27   forms, tables and tiles
+   Divider       #DED8CE   #5C514B   decorative borders
+   Field border  #7C756B   #A99B91   form borders
+   Stripe        #F6F2EB   #39312D   alternating table rows
+   Button text   #FFFFFF   #FFFFFF   text on buttons
+   Focus         #B45309   #F5BF76   keyboard focus
+   Card hover    #247A6D   #8DDCC8   card hover border
+
+   Dark theme contrast testing
+   Checked using https://webaim.org/resources/contrastchecker/
+   Text requires 4.5:1 and meaningful UI borders require 3:1.
+
+   Main text on page: 14.81:1
+   Main text on cards: 9.25:1
+   Main text on brand tint: 8.38:1
+   Main text on surface: 12.49:1
+   Main text on stripe: 11.24:1
+   Muted text on page: 9.16:1
+   Muted text on surface: 7.72:1
+   Link on page: 10.54:1
+   Link on surface: 8.88:1
+   Button text on brand: 5.15:1
+   Button text on brand hover: 7.36:1
+
+   Dark theme borders and focus states
+   Field border on surface: 5.24:1
+   Field border on page: 6.21:1
+   Focus on page: 10.05:1
+   Focus on card: 6.28:1
+   Focus on brand tint: 5.69:1
+   Focus on surface: 8.48:1
+   Card hover border on card: 6.58:1
+   Card hover border on brand tint: 5.96:1
+
+   During testing, I found that the original green card
+   hover border did not have enough contrast in dark mode.
+   I created a separate variable for the hover border
+   so I could use a lighter green in dark mode without
+   changing the button colour.
+
+   The dark theme uses the same styling rules as the
+   light theme. Only the colour variables are overridden.
+   ===================================================== */
+
 :root {
     --colour-page: #FAF6F5;
     --colour-card: #A68E84;
     --colour-brand-tint: #6ABAAE;
-    --colour-brand: #247A6D;
-    --colour-link: #247A6D;
     --colour-brand-hover: #1B6056;
     --colour-text: #1b1f3b;
     --colour-muted: #5e5850;
@@ -52,6 +107,10 @@
     --colour-stripe: #f6f2eb;
     --colour-on-brand: #ffffff;
     --colour-focus: #b45309;
+
+    --colour-brand: #247A6D;
+    --colour-link: #247A6D;
+    --colour-card-hover: var(--colour-text);
 
     /* Spacing, on a consistent scale */
     --space-xs: 0.25rem;
@@ -84,6 +143,7 @@
         --colour-border: #A99B91;
         --colour-stripe: #39312D;
         --colour-link: #8DDCC8;
+        --colour-card-hover: var(--colour-link);
         --colour-focus: #F5BF76;
     }
 }
@@ -280,7 +340,7 @@ main>section+.cards {
 /* Hover and focus states on the cards */
 .card:hover,
 .card:focus-within {
-    border-color: var(--colour-brand);
+    border-color: var(--colour-card-hover);
 }
 
 /* Card heading on the left, link (like "View all") on the right */
@@ -491,7 +551,7 @@ fieldset input[type="radio"] {
     width: 1.25rem;
     height: 1.25rem;
     margin: 0;
-    accent-color: var(--colour-brand);
+    accent-color: var(--colour-link);
 }
 
 /* Form buttons */
