@@ -38,12 +38,20 @@
    ===================================================== */
 
 :root {
-    --brandcol: #FAF6F5;
-    --brandcol2: #A68E84;
-    --brandcol3:#6ABAAE;
-    --brandcol4: #247A6D;
+    --colour-page: #FAF6F5;
+    --colour-card: #A68E84;
+    --colour-brand-tint: #6ABAAE;
+    --colour-brand: #247A6D;
+    --colour-text: #1b1f3b;
+    --colour-muted: #5e5850;
+    --colour-surface: #fffdf9;
+    --colour-divider: #ded8ce;
+    --colour-border: #7c756b;
+    --colour-stripe: #f6f2eb;
+    --colour-on-brand: #ffffff;
+    --colour-focus: #b45309;
 
-     /* Spacing, on a consistent scale */
+    /* Spacing, on a consistent scale */
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
@@ -71,8 +79,8 @@ body {
     font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    color: #1b1f3b;
-    background-color: var(--brandcol);
+    color: var(--colour-text);
+    background-color: var(--colour-page);
 }
 
 h1,
@@ -100,7 +108,7 @@ p {
 }
 
 a {
-    color: var(--brandcol4);
+    color: var(--colour-brand);
 }
 
 /* Responsive images */
@@ -166,21 +174,21 @@ main>section+.cards {
     display: block;
     padding: 0.5rem 1rem;
     border-radius: 10px;
-    color: #1b1f3b;
+    color: var(--colour-text);
     text-decoration: none;
 }
 
 /* Hover and focus states on every nav link */
 .nav-list a:hover,
 .nav-list a:focus-visible {
-    background-color: var(--brandcol3);
-    color: var(--brandcol4);
+    background-color: var(--colour-brand-tint);
+    color: var(--colour-brand);
 }
 
 /* The page you're on gets the light blue box, like "Home" in my mockup */
 .nav-list a[aria-current="page"] {
-    background-color: var(--brandcol3);
-    color: #1b1f3b;
+    background-color: var(--colour-brand-tint);
+    color: var(--colour-text);
     font-weight: 700;
 }
 
@@ -211,7 +219,7 @@ main>section+.cards {
 }
 
 #welcome p {
-    color: #5e5850;
+    color: var(--colour-muted);
     font-size: 1.25rem;
 }
 
@@ -227,7 +235,7 @@ main>section+.cards {
 /* Each card is a container, so its layout can react to its own width. Phone cards are white with a thin border, like my phone mockup. */
 .card {
     padding: 1.5rem;
-    background-color: var(--brandcol2);
+    background-color: var(--colour-card);
     border: 2px solid #ded8ce;
     border-radius: 20px;
     container-type: inline-size;
@@ -237,7 +245,7 @@ main>section+.cards {
 /* Hover and focus states on the cards */
 .card:hover,
 .card:focus-within {
-    border-color: var(--brandcol4);
+    border-color: var(--colour-brand);
 }
 
 /* Card heading on the left, link (like "View all") on the right */
@@ -254,7 +262,7 @@ main>section+.cards {
 }
 
 .card-inner>a {
-    color: #1b1f3b;
+    color: var(--colour-text);
     font-size: 0.875rem;
 }
 
@@ -276,7 +284,7 @@ main>section+.cards {
     width: 2.5rem;
     height: 2.5rem;
     flex-shrink: 0;
-    background-color: var(--brandcol);
+    background-color: var(--colour-brand);
     border: 1px solid #ded8ce;
     border-radius: 8px;
 }
@@ -448,13 +456,13 @@ fieldset input[type="radio"] {
     width: 1.25rem;
     height: 1.25rem;
     margin: 0;
-    accent-color: var(--brandcol4);
+    accent-color: var(--colour-brand);
 }
 
 /* Form buttons */
 button {
     padding: 0.75rem 1.5rem;
-    background-color: var(--brandcol4);
+    background-color: var(--colour-brand);
     color: #ffffff;
     font-weight: 600;
     border: 0;
@@ -465,7 +473,7 @@ button {
 /* Button interactions */
 button:hover,
 button:focus-visible {
-    background-color: var(--brandcol4_);
+    background-color: var(--colour-brand);
 }
 
 /* Tables */
@@ -492,7 +500,7 @@ caption {
 }
 
 thead th {
-    background-color: var(--brandcol2);
+    background-color: var(--colour-card);
     border-bottom: 2px solid #1b1f3b;
 }
 
@@ -594,7 +602,7 @@ textarea:focus-visible {
     .card {
         min-height: 12.5rem;
         padding: 1.75rem 2rem;
-        background-color: var(--brandcol2);
+        background-color: var(--colour-card);
         border-color: transparent;
         border-radius: 32px;
     }
@@ -620,6 +628,7 @@ textarea:focus-visible {
 /* Reduced motion: respects visitors who have asked their system to reduce animation.
    !important is one of the few legitimate uses here, because this rule has to override any other rule that sets motion. */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
