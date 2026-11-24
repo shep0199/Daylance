@@ -119,8 +119,34 @@ Lighthouse gave me 100% and axe found 0 issues, but neither one could check thes
 - **Tab order:** Nothing automated compares the tab order to the order the cards appear on screen. I checked that myself on the desktop layout.
 - **Mouse vs. keyboard focus:** I had to click and then tab to make sure the outline only shows for keyboard users.
 
-## Week 11: Variant via override
+## Week 11: Custom properties, tokens and dark theme
 
+### Token system
+All repeated values are hoisted into `:root` and named for meaning, not appearance. Categories: colour, spacing, border radius, type sizes and border widths. The palette table at the top of `style.css` lists every colour token with its light and dark value and what it is used for.
+
+### Spacing scale
+All padding, margins and gaps use a five-step scale instead of one-off numbers:
+`--space-xs` 0.25rem, `--space-sm` 0.5rem, `--space-md` 1rem, `--space-lg` 1.5rem, `--space-xl` 2.5rem.
+
+| Selector | Before | After |
+|---|---|---|
+| `p` | `margin: 0 0 0.5rem;` | `margin: 0 0 var(--space-sm);` |
+| `main` | `padding: 1.5rem 0 2.5rem;` | `padding: var(--space-lg) 0 var(--space-xl);` |
+| `.nav-list a` | `padding: 0.5rem 1rem;` | `padding: var(--space-sm) var(--space-md);` |
+| `#welcome img` | `margin-bottom: 0.75rem;` | `margin-bottom: var(--space-md);` |
+
+Most values stayed the same and just got a name. The avatar's 0.75rem margin wasn't on the scale, so it was moved to the nearest step (`--space-md`, 1rem). Every gap on the page now comes from the same five values, so spacing stays consistent and changing one token updates it everywhere.
+
+Full diff: https://github.com/shep0199/Daylance/commit/31eb0ecc87
+
+### Variant via override
 The highlighted card is built by overriding one variable, `--card-background`, instead of redeclaring `background-color`. Because `var()` is resolved on each element, the `.card` rule's background picks up the brand tint wherever `.card-highlight` is applied.
 
-The navigation is one nested block. `a` without `&` is a descendant selector (`.nav-list a`), while `&:hover` and `&[aria-current="page"]` attach to the link itself
+### Dark theme
+The dark theme uses `@media (prefers-color-scheme: dark)` and only overrides colour variables, so no styling rules are duplicated. Every text/background pair was checked in the WebAIM Contrast Checker for both themes, and all results are recorded in the comment at the top of `style.css`. Two colours were changed because of testing: the card hover border (dark) and the focus outline (light).
+
+### Nesting
+The navigation is one nested block. `a` without `&` is a descendant selector (`.nav-list a`), while `&:hover` and `&[aria-current="page"]` attach to the link itself.
+
+### Validation
+The W3C validator only flags `container-type`, `container-name` and `@container`, because it hasn't caught up with container queries yet. These are supported in all modern browsers. The `-webkit-appearance` warning is the intentional iOS Safari date/time fix.
