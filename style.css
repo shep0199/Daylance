@@ -16,7 +16,7 @@
    Field border  #7C756B   #A99B91   form borders
    Stripe        #F6F2EB   #39312D   alternating table rows
    Button text   #FFFFFF   #FFFFFF   text on buttons
-   Focus         #B45309   #F5BF76   keyboard focus
+   Focus         #6C3205   #F5BF76   keyboard focus
    Card hover    #1B1F3B  #8DDCC8   card hover border
 
    Dark theme contrast testing
@@ -47,6 +47,14 @@
    Radio button on surface: 8.88:1
    Placeholder text (muted) on surface: 7.72:1
 
+   Light theme focus states
+   Focus on page: 9.33:1
+   Focus on card: 3.26:1
+   Focus on brand tint: 4.41:1
+   Focus on surface: 9.86:1
+
+   Focus darkened from #B45309 to #6C3205 (same hue) because the original failed 3:1 on cards (1.63:1) and brand tint (2.21:1).
+
    During testing, I found that the original green card hover border did not have enough contrast in dark mode.
    I created a separate variable for the hover border so I could use a lighter green in dark mode without changing the button colour.
 
@@ -68,7 +76,7 @@
     --colour-border: #7c756b;
     --colour-stripe: #f6f2eb;
     --colour-on-brand: #ffffff;
-    --colour-focus: #b45309;
+    --colour-focus: #6B2A0A;
 
     --colour-brand: #247A6D;
     --colour-link: #247A6D;
