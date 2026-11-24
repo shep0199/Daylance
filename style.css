@@ -1,43 +1,4 @@
 /* =====================================================
-   Daylance colour palette
-   Named by job, not by how the colour looks.
-   Every text/background pair checked with the WebAIM
-   contrast checker: https://webaim.org/resources/contrastchecker/
-
-   Name          Hex       Used for
-   Ink           #1b1f3b   main text, headings
-   Muted         #5e5850   secondary text, dates, footer
-   Link          #2c44c9   links, button hover
-   Page          #fbf8f3   warm white page background
-   Surface       #fffdf9   inputs, tables, message tiles
-   Card          #ece7df   dashboard cards (desktop)
-   Stripe        #f6f2eb   every other table row
-   Brand         #3d5af1   buttons
-   Brand tint    #e4e9fd   current page + hover in nav
-   Field border  #7c756b   form field borders
-   Divider       #ded8ce   decorative lines only
-   Focus         #b45309   keyboard focus outline
-
-   Contrast results (need 4.5:1 for text, 3:1 for borders/focus)
-   Ink on Page 15.18 | on Surface 15.83 | on Card 13.07 | on Stripe 14.41 | on Brand tint 13.30
-   Muted on Page 6.63 | on Surface 6.92 | on Card 5.71 | on Stripe 6.30
-   Link on Page 7.14 | on Surface 7.44 | on Card 6.14 | on Brand tint 6.26
-   White text on Brand 5.34 | on Link (button hover) 7.56
-   Field border on Surface 4.48 | on Page 4.30
-   Focus on Page 4.74 | on Surface 4.94 | on Card 4.08
-
-   Divider is about 1.3:1, so it is only used for decorative lines
-
-   Hover and focus states
-   Nav link hover: Link on Brand tint 6.26
-   Current page: Ink on Brand tint 13.30
-   Button hover: White on Link 7.56
-   Card hover border: Brand on Surface 5.26 | on Card 4.34 (needs 3:1)
-   Focus outline on nav hover: Focus on Brand tint 4.15
-   Focus outline has outline-offset: 3px, so the page colour sits between it and blue buttons
-   ===================================================== */
-
-/* =====================================================
    Week 11 UPDATED: Daylance colour palette - Light and Dark Themes
    Named by purpose rather than appearance.
 
@@ -255,27 +216,27 @@ main>section+.cards {
     padding: 0;
 }
 
-/* Rounded boxes around each link, big enough to tap */
+/* Navigation links and their interaction states */
 .nav-list a {
     display: block;
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-control);
     color: var(--colour-text);
     text-decoration: none;
-}
 
-/* Hover and focus states on every nav link */
-.nav-list a:hover,
-.nav-list a:focus-visible {
-    background-color: var(--colour-brand-tint);
-    color: var(--colour-text);
-}
+    /* Hover and keyboard focus */
+    &:hover,
+    &:focus-visible {
+        background-color: var(--colour-brand-tint);
+        color: var(--colour-text);
+    }
 
-/* The page you're on gets the light blue box, like "Home" in my mockup */
-.nav-list a[aria-current="page"] {
-    background-color: var(--colour-brand-tint);
-    color: var(--colour-text);
-    font-weight: 700;
+    /* Highlights the current page */
+    &[aria-current="page"] {
+        background-color: var(--colour-brand-tint);
+        color: var(--colour-text);
+        font-weight: 700;
+    }
 }
 
 /* Welcome */
